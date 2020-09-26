@@ -84,7 +84,17 @@ class Application extends React.Component {
       video5play: false,
       video6play: false,
       video7play: false,
-      video8play: false
+      video8play: false,
+      page1Vis: "visible",
+      page2Vis: "hidden",
+      page3Vis: "hidden",
+      page4Vis: "hidden",
+      page5Vis: "hidden",
+      page6Vis: "hidden",
+      page7Vis: "hidden",
+      page8Vis: "hidden",
+      page9Vis: "hidden",
+      page10Vis: "hidden"
     };
     /*Bind Functions*/
     this.researchRef = React.createRef();
@@ -413,25 +423,6 @@ class Application extends React.Component {
     });
     /*Remove PopUp when clicked on About, Research, or Legend windows*/
     window.addEventListener("mousedown", this.handleAboutResearchClick);
-
-    /* set circle state to current scroll position on scroll */
-    window.addEventListener("scroll", this.setCircleState);
-  }
-
-  /* set circle state to current scroll position on scroll */
-  setCircleState() {
-    var i = 8;
-    var currentScrollPos = window.pageYOffset;
-    if((currentScrollPos>this.prevScrollPos)&&(currentScrollPos < this.state.themeGap*1.505)){
-      window.scrollTo(0,this.state.themeGap*1.505);
-    }
-    for (i = 8; i > -1; i--) {
-      if (currentScrollPos >= this.state.themeGap * i * 1.48) {
-        this.circleState = i;
-        break;
-      }
-    }
-    this.prevScrollPos = currentScrollPos;
   }
 
   /*When clicked on Home Button*/
@@ -597,16 +588,15 @@ class Application extends React.Component {
     } else {
       this.circleState += 1;
     }
-    console.log(this.circleState);
-    if (this.circleState == 0) {
-      window.scrollTo(0, 0);
-    } else {
-      window.scrollTo({
-        top: this.state.themeGap * this.circleState * 1.505,
-        left: 0,
-        behavior: "smooth"
-      });
-    }
+    if (this.circleState == 0) {this.setState({page1Vis: "visible", page9Vis: "hidden"})}
+    if (this.circleState == 1) {this.setState({page2Vis: "visible", page1Vis: "hidden"})}
+    if (this.circleState == 2) {this.setState({page3Vis: "visible", page2Vis: "hidden"})}
+    if (this.circleState == 3) {this.setState({page4Vis: "visible", page3Vis: "hidden"})}
+    if (this.circleState == 4) {this.setState({page5Vis: "visible", page4Vis: "hidden"})}
+    if (this.circleState == 5) {this.setState({page6Vis: "visible", page5Vis: "hidden"})}
+    if (this.circleState == 6) {this.setState({page7Vis: "visible", page6Vis: "hidden"})}
+    if (this.circleState == 7) {this.setState({page8Vis: "visible", page7Vis: "hidden"})}
+    if (this.circleState == 8) {this.setState({page9Vis: "visible", page8Vis: "hidden"})}
   }
 
   /*When Slider position is changed*/
@@ -645,14 +635,16 @@ class Application extends React.Component {
     return (
       /*Main Div*/
       <div>
-        {/*Theme 0*/}
+        {/*Page 1*/}
+        {/*Page 1 Video*/}
         <ReactPlayer
           className="video"
           style={{
             margin: -50,
             top: 0,
             left: 0,
-            zIndex: 0
+            zIndex: 0,
+            visibility: this.state.page1Vis
           }}
           url={this.theme0Video}
           height={1.1 * this.state.mapHeight}
@@ -664,7 +656,7 @@ class Application extends React.Component {
             }
           }}
         />
-        {/*Theme 0 Description*/}
+        {/*Page 1 Description*/}
         <div
           style={{
             padding: 20,
@@ -672,11 +664,13 @@ class Application extends React.Component {
             zIndex: 1,
             width: 500,
             top: 300,
-            left: 200
+            left: 200,
+            visibility: this.state.page1Vis
           }}
         >
           <text className="themeDesc">{this.theme0Desc}</text>
         </div>
+
         {/*Map Div*/}
         <div
           ref={el => (this.mapContainer = el)}
@@ -690,16 +684,18 @@ class Application extends React.Component {
             backgroundColor: "transparent"
           }}
         />
-        {/*Theme 1*/}
+
+        {/* Page 2: Theme 1*/}
         <div
           style={{
             position: "absolute",
-            top: 1.47 * this.state.themeGap,
+            top: 0.5 * this.state.themeGap,
             height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none",
             left: (window.innerWidth * this.state.themeWidth) / 6,
             width: this.state.themeWidth * window.innerWidth,
-            transition: "width 1s, left 1s"
+            transition: "width 1s, left 1s",
+            visibility: this.state.page2Vis
           }}
         >
           {/*Theme 1 Description*/}
@@ -745,16 +741,18 @@ class Application extends React.Component {
             }
           />
         </div>
-        {/*Theme 2*/}
+
+        {/*Page 3: Theme 2*/}
         <div
           style={{
             position: "absolute",
-            top: 3 * this.state.themeGap,
+            top: 0.5 * this.state.themeGap,
             height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none",
             left: (window.innerWidth * this.state.themeWidth) / 6,
             width: this.state.themeWidth * window.innerWidth,
-            transition: "width 1s, left 1s"
+            transition: "width 1s, left 1s",
+            visibility: this.state.page3Vis
           }}
         >
           {/*Theme 2 Description*/}
@@ -796,16 +794,18 @@ class Application extends React.Component {
             }
           />
         </div>
-        {/*Theme 3*/}
+
+        {/*Page 4: Theme 3*/}
         <div
           style={{
             position: "absolute",
-            top: 4.5 * this.state.themeGap,
+            top: 0.5 * this.state.themeGap,
             height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none",
             left: (window.innerWidth * this.state.themeWidth) / 6,
             width: this.state.themeWidth * window.innerWidth,
-            transition: "width 1s, left 1s"
+            transition: "width 1s, left 1s",
+            visibility: this.state.page4Vis
           }}
         >
           {/*Theme 3 Description*/}
@@ -847,16 +847,18 @@ class Application extends React.Component {
             }
           />
         </div>
-        {/*Theme 4*/}
+
+        {/*Page 5: Theme 4*/}
         <div
           style={{
             position: "absolute",
-            top: 6 * this.state.themeGap,
+            top: 0.5 * this.state.themeGap,
             height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none",
             left: (window.innerWidth * this.state.themeWidth) / 6,
             width: this.state.themeWidth * window.innerWidth,
-            transition: "width 1s, left 1s"
+            transition: "width 1s, left 1s",
+            visibility: this.state.page5Vis
           }}
         >
           {/*Theme 4 Description*/}
@@ -898,16 +900,18 @@ class Application extends React.Component {
             }
           />
         </div>
-        {/*Theme 5*/}
+
+        {/*Page 6: Theme 5*/}
         <div
           style={{
             position: "absolute",
-            top: 7.5 * this.state.themeGap,
+            top: 0.5 * this.state.themeGap,
             height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none",
             left: (window.innerWidth * this.state.themeWidth) / 6,
             width: this.state.themeWidth * window.innerWidth,
-            transition: "width 1s, left 1s"
+            transition: "width 1s, left 1s",
+            visibility: this.state.page6Vis
           }}
         >
           {/*Theme 5 Description*/}
@@ -949,16 +953,18 @@ class Application extends React.Component {
             }
           />
         </div>
-        {/*Theme 6*/}
+
+        {/*Page 7: Theme 6*/}
         <div
           style={{
             position: "absolute",
-            top: 9 * this.state.themeGap,
+            top: 0.5 * this.state.themeGap,
             height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none",
             left: (window.innerWidth * this.state.themeWidth) / 6,
             width: this.state.themeWidth * window.innerWidth,
-            transition: "width 1s, left 1s"
+            transition: "width 1s, left 1s",
+            visibility: this.state.page7Vis
           }}
         >
           {/*Theme 6 Description*/}
@@ -1000,16 +1006,18 @@ class Application extends React.Component {
             }
           />
         </div>
-        {/*Theme 7*/}
+        
+        {/*Page 8: Theme 7*/}
         <div
           style={{
             position: "absolute",
-            top: 10.5 * this.state.themeGap,
+            top: 0.5 * this.state.themeGap,
             height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none",
             left: (window.innerWidth * this.state.themeWidth) / 6,
             width: this.state.themeWidth * window.innerWidth,
-            transition: "width 1s, left 1s"
+            transition: "width 1s, left 1s",
+            visibility: this.state.page8Vis
           }}
         >
           {/*Theme 7 Description*/}
@@ -1051,16 +1059,18 @@ class Application extends React.Component {
             }
           />
         </div>
-        {/*Theme 8*/}
+
+        {/*Page 9: Theme 8*/}
         <div
           style={{
             position: "absolute",
-            top: 12 * this.state.themeGap,
+            top: 0.5 * this.state.themeGap,
             height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none",
             left: (window.innerWidth * this.state.themeWidth) / 6,
             width: this.state.themeWidth * window.innerWidth,
-            transition: "width 1s, left 1s"
+            transition: "width 1s, left 1s",
+            visibility: this.state.page9Vis
           }}
         >
           {/*Theme 8 Description*/}
@@ -1102,17 +1112,20 @@ class Application extends React.Component {
             }
           />
         </div>
-        {/*End of Themes Buffer*/}
+
+        {/*Page 10: End of Themes Buffer*/}
         <div
           style={{
             position: "absolute",
             left: window.innerWidth / 8,
             width: (3 * window.innerWidth) / 4,
-            top: 13.5 * this.state.themeGap,
+            top: 0.5 * this.state.themeGap,
             height: (3 * this.state.themeGap) / 4,
-            pointerEvents: "none"
+            pointerEvents: "none",
+            visibility: this.state.page10Vis
           }}
         />
+
         {/*Title Bar*/}
         <div className="titlebar" style={{ top: -10, width: 550, zIndex: 10 }}>
           <Typekit kitId="bor7jxc" />
