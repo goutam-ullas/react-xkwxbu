@@ -672,7 +672,6 @@ class Application extends React.Component {
             width: 500,
             top: 300,
             left: 100,
-            lineHeight: 1,
             visibility: this.state.page1Vis
           }}
         >
