@@ -469,7 +469,7 @@ class Application extends React.Component {
         aboutWidth: window.innerWidth / 2,
         themeWidth: 0.375,
         themeDescWidth: "100%",
-        themeDescBottom: 600,
+        themeDescBottom: 500,
         themeVidLeft: 100
       });
     } else {
@@ -547,7 +547,7 @@ class Application extends React.Component {
         researchBorder: 50,
         themeWidth: 0.375,
         themeDescWidth: "100%",
-        themeDescBottom: 600,
+        themeDescBottom: 500,
         themeVidLeft: 100
       });
     } else {
