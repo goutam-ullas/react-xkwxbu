@@ -651,15 +651,15 @@ class Application extends React.Component {
           className="video"
           style={{
             top: 0,
-            left: 0,
+            left: -50,
             bottom: 0,
             right: 0,
             zIndex: 0,
             visibility: this.state.page1Vis
           }}
           url={this.theme0Video}
-          height={window.innerHeight}
-          width={window.innerWidth}
+          height={1.1*window.innerHeight}
+          width={1.1*window.innerWidth}
           controls={true}
           config={{
             vimeo: {
@@ -675,7 +675,8 @@ class Application extends React.Component {
             zIndex: 1,
             width: 500,
             top: 300,
-            left: 200,
+            left: 100,
+            lineHeight: 1,
             visibility: this.state.page1Vis
           }}
         >
