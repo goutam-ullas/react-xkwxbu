@@ -642,7 +642,7 @@ class Application extends React.Component {
         <ReactPlayer
           className="video"
           style={{
-            top: 0,
+            top: -50,
             left: -50,
             bottom: 0,
             right: 0,
