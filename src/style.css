@@ -370,7 +370,7 @@ display:inline;
 }
 
 .video {
-  position: sticky;
+  position: fixed;
   transition: width 1s, height 1s, left 1s;
   pointer-events: auto;
 }

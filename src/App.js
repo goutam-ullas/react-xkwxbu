@@ -75,16 +75,8 @@ class Application extends React.Component {
       scaleDistance: 13,
       themeWidth: 0.75,
       themeDescWidth: "40%",
-      themeDescBottom: 70,
-      themeVidLeft: 1000,
-      video1play: false,
-      video2play: false,
-      video3play: false,
-      video4play: false,
-      video5play: false,
-      video6play: false,
-      video7play: false,
-      video8play: false,
+      themeDescBottom: 300,
+      themeVidLeft: 700,
       page1Vis: "visible",
       page2Vis: "hidden",
       page3Vis: "hidden",
@@ -115,11 +107,11 @@ class Application extends React.Component {
     this.researchFunction = this.researchFunction.bind(this);
     this.sliderChange = this.sliderChange.bind(this);
     this.updateDimensions = this.updateDimensions.bind(this);
-    this.setCircleState = this.setCircleState.bind(this);
     /*Text Variables*/
     this.aboutText =
       "Goods, Gods and Goddesses alternates performances with moments of their making. In portraying the market, Begum Bazar, and the many goods, gods and goddesses that move this space, I am looking, seeking but also escaping what I’ve been rummaging. These are individual segments, fragments of a whole, a whole I may never conceive. Because the thing is, in the telling of the various parts that will build this whole, I’m left with impressions of acts about acts, of scripted acts and scripting acts, of directing in the Bazar and being directed by the Bazar, of watching people perform with intermittent awareness of my own performance. Here, bodies become, a bride, a mother, a devotee, a woman. Stores advertise wholesale deals, actors play multiple parts, wholesale roles. It is a patch of land, but a theatre, with rehearsals, scripts and episodic memories keeping gender desirable, as imagined by some, exacted and ordered, with its outlines defined, insides determined, and borders enforced.";
-    this.theme0Desc = "The opening act set in the market scene, outside of the stores with their own smaller acts, is the longest one. It starts at about 10 AM, when the first actors, men, all playing storekeepers gradually enter the scene with women following after. About an hour before noon, the set is full, with all actors, occupying their respective positions. Smaller acts include men and women crossing streets, with women walking past stores in groups. Some actors are to walk with stage directions from google reviews. Others are to act from memory and the nostalgia of a previous act. The vital, perhaps the most challenging part is to co-ordinate the whole scene while the traffic moves as usual along the jagged lanes. The actors, the stores, the space, the traffic, the honking, all merge together, composing, enacting and reenacting. Each corner of the market concentrates on recreating different moments through different acts.";
+    this.theme0Desc =
+      "The opening act set in the market scene, outside of the stores with their own smaller acts, is the longest one. It starts at about 10 AM, when the first actors, men, all playing storekeepers gradually enter the scene with women following after. About an hour before noon, the set is full, with all actors, occupying their respective positions. Smaller acts include men and women crossing streets, with women walking past stores in groups. Some actors are to walk with stage directions from google reviews. Others are to act from memory and the nostalgia of a previous act. The vital, perhaps the most challenging part is to co-ordinate the whole scene while the traffic moves as usual along the jagged lanes. The actors, the stores, the space, the traffic, the honking, all merge together, composing, enacting and reenacting. Each corner of the market concentrates on recreating different moments through different acts.";
     this.theme1Title = "This is Theme 1";
     this.theme1Desc =
       "This thesis looks at an urban market, Begum Bazar situated in the old city of Hyderabad and its relation to gender. The work, initially set out to explore kitchen objects and their place in shaping one’s life, eventually becomes an exploration into how, space and gender narratives co-exist and help sustain each other. By using the example of this market situated in a major metropolitan Indian city, and through interviews of people occupying and visiting the space, the work speculates on how social hierarchies and practices gain ground.";
@@ -485,8 +477,8 @@ class Application extends React.Component {
         aboutWidth: 0,
         themeWidth: 0.75,
         themeDescWidth: "40%",
-        themeDescBottom: 70,
-        themeVidLeft: 1000
+        themeDescBottom: 300,
+        themeVidLeft: 700
       });
     }
   }
@@ -509,8 +501,8 @@ class Application extends React.Component {
         aboutState: true,
         themeWidth: 0.75,
         themeDescWidth: "40%",
-        themeDescBottom: 70,
-        themeVidLeft: 1000
+        themeDescBottom: 300,
+        themeVidLeft: 500
       });
     }
     if (this.state.researchState == false) {
@@ -519,8 +511,8 @@ class Application extends React.Component {
         researchState: true,
         themeWidth: 0.75,
         themeDescWidth: "40%",
-        themeDescBottom: 70,
-        themeVidLeft: 1000
+        themeDescBottom: 300,
+        themeVidLeft: 700
       });
     }
     if (this.state.legendState == true) {
@@ -556,7 +548,7 @@ class Application extends React.Component {
         themeWidth: 0.375,
         themeDescWidth: "100%",
         themeDescBottom: 600,
-        themeVidLeft: 100
+        themeVidLeft: 0
       });
     } else {
       this.setState({
@@ -564,8 +556,8 @@ class Application extends React.Component {
         researchBorder: 0,
         themeWidth: 0.75,
         themeDescWidth: "40%",
-        themeDescBottom: 70,
-        themeVidLeft: 1000
+        themeDescBottom: 300,
+        themeVidLeft: 700
       });
     }
   }
@@ -588,15 +580,33 @@ class Application extends React.Component {
     } else {
       this.circleState += 1;
     }
-    if (this.circleState == 0) {this.setState({page1Vis: "visible", page9Vis: "hidden"})}
-    if (this.circleState == 1) {this.setState({page2Vis: "visible", page1Vis: "hidden"})}
-    if (this.circleState == 2) {this.setState({page3Vis: "visible", page2Vis: "hidden"})}
-    if (this.circleState == 3) {this.setState({page4Vis: "visible", page3Vis: "hidden"})}
-    if (this.circleState == 4) {this.setState({page5Vis: "visible", page4Vis: "hidden"})}
-    if (this.circleState == 5) {this.setState({page6Vis: "visible", page5Vis: "hidden"})}
-    if (this.circleState == 6) {this.setState({page7Vis: "visible", page6Vis: "hidden"})}
-    if (this.circleState == 7) {this.setState({page8Vis: "visible", page7Vis: "hidden"})}
-    if (this.circleState == 8) {this.setState({page9Vis: "visible", page8Vis: "hidden"})}
+    if (this.circleState == 0) {
+      this.setState({ page1Vis: "visible", page9Vis: "hidden" });
+    }
+    if (this.circleState == 1) {
+      this.setState({ page2Vis: "visible", page1Vis: "hidden" });
+    }
+    if (this.circleState == 2) {
+      this.setState({ page3Vis: "visible", page2Vis: "hidden" });
+    }
+    if (this.circleState == 3) {
+      this.setState({ page4Vis: "visible", page3Vis: "hidden" });
+    }
+    if (this.circleState == 4) {
+      this.setState({ page5Vis: "visible", page4Vis: "hidden" });
+    }
+    if (this.circleState == 5) {
+      this.setState({ page6Vis: "visible", page5Vis: "hidden" });
+    }
+    if (this.circleState == 6) {
+      this.setState({ page7Vis: "visible", page6Vis: "hidden" });
+    }
+    if (this.circleState == 7) {
+      this.setState({ page8Vis: "visible", page7Vis: "hidden" });
+    }
+    if (this.circleState == 8) {
+      this.setState({ page9Vis: "visible", page8Vis: "hidden" });
+    }
   }
 
   /*When Slider position is changed*/
@@ -640,15 +650,16 @@ class Application extends React.Component {
         <ReactPlayer
           className="video"
           style={{
-            margin: -50,
             top: 0,
             left: 0,
+            bottom: 0,
+            right: 0,
             zIndex: 0,
             visibility: this.state.page1Vis
           }}
           url={this.theme0Video}
-          height={1.1 * this.state.mapHeight}
-          width={1.1 * this.state.mapWidth}
+          height={window.innerHeight}
+          width={window.innerWidth}
           controls={true}
           config={{
             vimeo: {
@@ -688,10 +699,10 @@ class Application extends React.Component {
         {/* Page 2: Theme 1*/}
         <div
           style={{
-            position: "absolute",
-            top: 0.5 * this.state.themeGap,
-            height: (3 * this.state.themeGap) / 4,
+            position: "fixed",
             pointerEvents: "none",
+            top: 0,
+            height: window.innerHeight,
             left: (window.innerWidth * this.state.themeWidth) / 6,
             width: this.state.themeWidth * window.innerWidth,
             transition: "width 1s, left 1s",
@@ -724,19 +735,16 @@ class Application extends React.Component {
             width={this.state.videoDimX1 * this.state.videoWidth}
             url={this.theme1Video}
             controls={true}
-            playing={this.state.video1play}
             onPlay={() =>
               this.setState({
                 videoDimX1: 1.25,
-                videoZindex1: 10,
-                playing: true
+                videoZindex1: 10
               })
             }
             onPause={() =>
               this.setState({
                 videoDimX1: 1,
-                videoZindex1: 1,
-                playing: false
+                videoZindex1: 1
               })
             }
           />
@@ -745,10 +753,10 @@ class Application extends React.Component {
         {/*Page 3: Theme 2*/}
         <div
           style={{
-            position: "absolute",
-            top: 0.5 * this.state.themeGap,
-            height: (3 * this.state.themeGap) / 4,
+            position: "fixed",
             pointerEvents: "none",
+            top: 0,
+            height: window.innerHeight,
             left: (window.innerWidth * this.state.themeWidth) / 6,
             width: this.state.themeWidth * window.innerWidth,
             transition: "width 1s, left 1s",
@@ -798,10 +806,10 @@ class Application extends React.Component {
         {/*Page 4: Theme 3*/}
         <div
           style={{
-            position: "absolute",
-            top: 0.5 * this.state.themeGap,
-            height: (3 * this.state.themeGap) / 4,
+            position: "fixed",
             pointerEvents: "none",
+            top: 0,
+            height: window.innerHeight,
             left: (window.innerWidth * this.state.themeWidth) / 6,
             width: this.state.themeWidth * window.innerWidth,
             transition: "width 1s, left 1s",
@@ -851,10 +859,10 @@ class Application extends React.Component {
         {/*Page 5: Theme 4*/}
         <div
           style={{
-            position: "absolute",
-            top: 0.5 * this.state.themeGap,
-            height: (3 * this.state.themeGap) / 4,
+            position: "fixed",
             pointerEvents: "none",
+            top: 0,
+            height: window.innerHeight,
             left: (window.innerWidth * this.state.themeWidth) / 6,
             width: this.state.themeWidth * window.innerWidth,
             transition: "width 1s, left 1s",
@@ -904,10 +912,10 @@ class Application extends React.Component {
         {/*Page 6: Theme 5*/}
         <div
           style={{
-            position: "absolute",
-            top: 0.5 * this.state.themeGap,
-            height: (3 * this.state.themeGap) / 4,
+            position: "fixed",
             pointerEvents: "none",
+            top: 0,
+            height: window.innerHeight,
             left: (window.innerWidth * this.state.themeWidth) / 6,
             width: this.state.themeWidth * window.innerWidth,
             transition: "width 1s, left 1s",
@@ -957,10 +965,10 @@ class Application extends React.Component {
         {/*Page 7: Theme 6*/}
         <div
           style={{
-            position: "absolute",
-            top: 0.5 * this.state.themeGap,
-            height: (3 * this.state.themeGap) / 4,
+            position: "fixed",
             pointerEvents: "none",
+            top: 0,
+            height: window.innerHeight,
             left: (window.innerWidth * this.state.themeWidth) / 6,
             width: this.state.themeWidth * window.innerWidth,
             transition: "width 1s, left 1s",
@@ -1006,14 +1014,14 @@ class Application extends React.Component {
             }
           />
         </div>
-        
+
         {/*Page 8: Theme 7*/}
         <div
           style={{
-            position: "absolute",
-            top: 0.5 * this.state.themeGap,
-            height: (3 * this.state.themeGap) / 4,
+            position: "fixed",
             pointerEvents: "none",
+            top: 0,
+            height: window.innerHeight,
             left: (window.innerWidth * this.state.themeWidth) / 6,
             width: this.state.themeWidth * window.innerWidth,
             transition: "width 1s, left 1s",
@@ -1063,10 +1071,10 @@ class Application extends React.Component {
         {/*Page 9: Theme 8*/}
         <div
           style={{
-            position: "absolute",
-            top: 0.5 * this.state.themeGap,
-            height: (3 * this.state.themeGap) / 4,
+            position: "fixed",
             pointerEvents: "none",
+            top: 0,
+            height: window.innerHeight,
             left: (window.innerWidth * this.state.themeWidth) / 6,
             width: this.state.themeWidth * window.innerWidth,
             transition: "width 1s, left 1s",
@@ -1112,19 +1120,6 @@ class Application extends React.Component {
             }
           />
         </div>
-
-        {/*Page 10: End of Themes Buffer*/}
-        <div
-          style={{
-            position: "absolute",
-            left: window.innerWidth / 8,
-            width: (3 * window.innerWidth) / 4,
-            top: 0.5 * this.state.themeGap,
-            height: (3 * this.state.themeGap) / 4,
-            pointerEvents: "none",
-            visibility: this.state.page10Vis
-          }}
-        />
 
         {/*Title Bar*/}
         <div className="titlebar" style={{ top: -10, width: 550, zIndex: 10 }}>
