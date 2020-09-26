@@ -10,7 +10,6 @@ import {
 } from "@reach/slider";
 import "@reach/slider/styles.css";
 import ReactPlayer from "react-player";
-import smoothscroll from "smoothscroll-polyfill";
 import Typekit from "react-typekit";
 //import { Document, Page } from "react-pdf";
 import { Document } from "react-pdf/dist/esm/entry.parcel";
@@ -147,7 +146,6 @@ class Application extends React.Component {
   /* Theme Position Variables*/
   circleState = 0;
   maxThemes = 8;
-  prevScrollPos = 0;
   /*On Mount*/
   componentDidMount() {
     /*Update Dimenstions based on screen size*/
@@ -168,7 +166,6 @@ class Application extends React.Component {
     this.map.scrollZoom.disable();
     this.map.doubleClickZoom.disable();
     this.map.dragPan.enable();
-    smoothscroll.polyfill();
     var deltaDistance = 100;
     var deltaDegrees = 10;
     function easing(t) {
@@ -421,7 +418,6 @@ class Application extends React.Component {
   indexFunction() {
     console.log("index");
     window.location.reload(false);
-    window.scrollTo(0, 0);
   }
   /*Function to Update dimensions*/
   updateDimensions() {
