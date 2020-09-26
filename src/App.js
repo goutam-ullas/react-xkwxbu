@@ -469,7 +469,7 @@ class Application extends React.Component {
         aboutWidth: window.innerWidth / 2,
         themeWidth: 0.375,
         themeDescWidth: "100%",
-        themeDescBottom: 500,
+        themeDescBottom: 550,
         themeVidLeft: 100
       });
     } else {
@@ -547,7 +547,7 @@ class Application extends React.Component {
         researchBorder: 50,
         themeWidth: 0.375,
         themeDescWidth: "100%",
-        themeDescBottom: 500,
+        themeDescBottom: 550,
         themeVidLeft: 100
       });
     } else {
@@ -565,10 +565,6 @@ class Application extends React.Component {
   circleFunction() {
     console.log("circle");
     this.setState({
-      aboutWidth: 0,
-      aboutState: true,
-      researchWidth: 0,
-      researchState: true,
       popUpH: 0,
       popUpW: 0,
       pointName: "",
