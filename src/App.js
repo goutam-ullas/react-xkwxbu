@@ -827,21 +827,23 @@ class Application extends React.Component {
           <text className="themeDesc">{this.theme0Desc}</text>
         </div>
         {/*Page 1 Mute Control*/}
-        <span
-          role="button"
-          aria-label="Volume"
-          onClick={this.muteFunction}
-          style={{
-            fontSize: 32,
-            position: "fixed",
-            bottom: 50,
-            right: 20,
-            visibility: this.state.page1Vis,
-            zIndex: 10
-          }}
-        >
-          <FontAwesomeIcon icon={this.state.volumeIcon} />
-        </span>
+        <div>
+          <span
+            role="button"
+            aria-label="Volume"
+            onClick={this.muteFunction}
+            style={{
+              fontSize: 32,
+              position: "fixed",
+              bottom: 50,
+              right: 20,
+              visibility: this.state.page1Vis,
+              zIndex: 10
+            }}
+          >
+            <FontAwesomeIcon icon={this.state.volumeIcon} />
+          </span>
+        </div>
         {/*Map Div*/}
         <div
           ref={el => (this.mapContainer = el)}
@@ -1099,10 +1101,10 @@ class Application extends React.Component {
               <br />
               {this.theme5Desc2}
               <br />
-              <br />              
+              <br />
               {this.theme5Desc3}
               <br />
-              <br />              
+              <br />
               {this.theme5Desc4}
             </text>
           </div>
