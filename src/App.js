@@ -125,7 +125,7 @@ class Application extends React.Component {
       "The opening act set in the market scene, outside of the stores with their own smaller acts, is the longest one. It starts at about 10 AM, when the first actors, men, all playing storekeepers gradually enter the scene with women following after. About an hour before noon, the set is full, with all actors, occupying their respective positions. Smaller acts include men and women crossing streets, with women walking past stores in groups. Some actors are to walk with stage directions from google reviews. Others are to act from memory and the nostalgia of a previous act. The vital, perhaps the most challenging part is to co-ordinate the whole scene while the traffic moves as usual along the jagged lanes. The actors, the stores, the space, the traffic, the honking, all merge together, composing, enacting and reenacting. Each corner of the market concentrates on recreating different moments through different acts.";
     this.theme1Title = "This is Theme 1";
     this.theme1Desc =
-      "This thesis looks at an urban market, Begum Bazar situated in the old city of Hyderabad and its relation to gender. The work, initially set out to explore kitchen objects and their place in shaping one’s life, eventually becomes an exploration into how, space and gender narratives co-exist and help sustain each other. By using the example of this market situated in a major metropolitan Indian city, and through interviews of people occupying and visiting the space, the work speculates on how social hierarchies and practices gain ground.";
+      "I’ve laid out the scenes now, to arrange them, find an order, a cause and effect, the hero and the anti-hero and discern the rehearsal from the act, the actor from the director, the stage from the ground, to sift memories from scripts and index this audience at once synchronized and performing.";
     this.theme2Title = "This is Theme 2";
     this.theme2Desc =
       "I’ve laid out the scenes now, to arrange them, find an order, a cause and effect, the hero and the anti-hero and discern the rehearsal from the act, the actor from the director, the stage from the ground, to sift memories from scripts and index this audience at once synchronized and performing.";
@@ -135,7 +135,7 @@ class Application extends React.Component {
   }
   /* Video URLs*/
   theme0Video = "https://player.vimeo.com/video/462185422";
-  theme1Video = "https://vimeo.com/448631749/8c1e28fe46";
+  theme1Video = "https://vimeo.com/448630508/11ec6d4d54";
   theme2Video = "https://vimeo.com/448630508/11ec6d4d54";
   theme3Video = "https://vimeo.com/448632066/2ab228f98c";
   theme4Video = "https://vimeo.com/448631454/d006e93a41";
