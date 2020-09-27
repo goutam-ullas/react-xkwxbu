@@ -11,7 +11,12 @@ import "@reach/slider/styles.css";
 import ReactPlayer from "react-player";
 import Typekit from "react-typekit";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVolumeOff, faVolumeUp } from "@fortawesome/free-solid-svg-icons";
+import {
+  faVolumeOff,
+  faVolumeUp,
+  faArrowRight,
+  faLongArrowAltRight
+} from "@fortawesome/free-solid-svg-icons";
 //import { Document, Page } from "react-pdf";
 import { Document } from "react-pdf/dist/esm/entry.parcel";
 import "./style.css";
@@ -105,6 +110,7 @@ class Application extends React.Component {
     this.video8Ref = React.createRef();
     this.handleAboutResearchClick = this.handleAboutResearchClick.bind(this);
     this.circleFunction = this.circleFunction.bind(this);
+    this.circleFunctionDown = this.circleFunctionDown.bind(this);
     this.aboutFunction = this.aboutFunction.bind(this);
     this.legendFunction = this.legendFunction.bind(this);
     this.researchFunction = this.researchFunction.bind(this);
@@ -422,8 +428,7 @@ class Application extends React.Component {
   muteFunction() {
     if (this.state.page1mute == true) {
       this.setState({ volumeIcon: faVolumeUp, page1mute: false });
-    }
-    else{
+    } else {
       this.setState({ volumeIcon: faVolumeOff, page1mute: true });
     }
   }
@@ -629,6 +634,56 @@ class Application extends React.Component {
       this.setState({ page9Vis: "visible", page8Vis: "hidden" });
     }
   }
+    /*When clicked on Prev button*/
+  circleFunctionDown() {
+    this.setState({
+      popUpH: 0,
+      popUpW: 0,
+      pointName: "",
+      layerName: "",
+      popUpPad: 0
+    });
+    if (this.circleState == 0) {
+      this.circleState = this.maxThemes;
+    } else {
+      this.circleState -= 1;
+    }
+    if (this.circleState == 0) {
+      this.setState({
+        page1Vis: "visible",
+        page2Vis: "hidden",
+        page1Play: true
+      });
+    }
+    if (this.circleState == 1) {
+      this.setState({
+        page2Vis: "visible",
+        page3Vis: "hidden",
+      });
+    }
+    if (this.circleState == 2) {
+      this.setState({ page3Vis: "visible", page4Vis: "hidden" });
+    }
+    if (this.circleState == 3) {
+      this.setState({ page4Vis: "visible", page5Vis: "hidden" });
+    }
+    if (this.circleState == 4) {
+      this.setState({ page5Vis: "visible", page6Vis: "hidden" });
+    }
+    if (this.circleState == 5) {
+      this.setState({ page6Vis: "visible", page7Vis: "hidden" });
+    }
+    if (this.circleState == 6) {
+      this.setState({ page7Vis: "visible", page8Vis: "hidden" });
+    }
+    if (this.circleState == 7) {
+      this.setState({ page8Vis: "visible", page9Vis: "hidden" });
+    }
+    if (this.circleState == 8) {
+      this.setState({ page9Vis: "visible", page0Vis: "hidden", page1Play: false });
+    }
+    console.log(this.circleState);
+  }
 
   /*When Slider position is changed*/
   sliderChange(v) {
@@ -666,6 +721,36 @@ class Application extends React.Component {
     return (
       /*Main Div*/
       <div>
+        {/*Next Arrow Button*/}
+        <span
+          role="button"
+          aria-label=""
+          onClick={this.circleFunction}
+          style={{
+            fontSize: 40,
+            position: "fixed",
+            bottom: this.state.mapHeight / 2,
+            right: 50,
+            zIndex: 10
+          }}
+        >
+          &#62;
+        </span>
+        {/*Prev Arrow Button*/}
+        <span
+          role="button"
+          aria-label=""
+          onClick={this.circleFunctionDown}
+          style={{
+            fontSize: 40,
+            position: "fixed",
+            bottom: this.state.mapHeight / 2,
+            left: 50,
+            zIndex: 10
+          }}
+        >
+          &#60;
+        </span>
         {/*Page 1*/}
         {/*Page 1 Video*/}
         <ReactPlayer
