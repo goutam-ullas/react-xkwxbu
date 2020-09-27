@@ -835,8 +835,8 @@ class Application extends React.Component {
             style={{
               fontSize: 32,
               position: "fixed",
-              bottom: 50,
-              right: 20,
+              top: 12.5,
+              right: 170,
               visibility: this.state.page1Vis,
               zIndex: 10
             }}
