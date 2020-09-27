@@ -795,7 +795,7 @@ class Application extends React.Component {
           aria-label="Next"
           onClick={this.circleFunction}
           style={{
-            fontSize: 40,
+            fontSize: 72,
             position: "fixed",
             bottom: this.state.mapHeight / 2,
             right: 20,
@@ -810,7 +810,7 @@ class Application extends React.Component {
           aria-label="Previous"
           onClick={this.circleFunctionDown}
           style={{
-            fontSize: 40,
+            fontSize: 72,
             position: "fixed",
             bottom: this.state.mapHeight / 2,
             left: 20,
