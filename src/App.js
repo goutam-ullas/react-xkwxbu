@@ -853,7 +853,7 @@ class Application extends React.Component {
           style={{
             fontSize: 32,
             position: "fixed",
-            top: 14,
+            top: 13,
             right: 170,
             visibility: this.state.page1Vis,
             zIndex: 10
