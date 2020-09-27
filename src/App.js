@@ -424,12 +424,12 @@ class Application extends React.Component {
     if (window.innerWidth > window.innerHeight) {
       this.setState({
         mapWidth: window.innerWidth,
-        mapHeight: 9*window.innerWidth/16
-      });}
-    else{
+        mapHeight: (9 * window.innerWidth) / 16
+      });
+    } else {
       this.setState({
         mapHeight: window.innerHeight,
-        mapWidth: 16*window.innerHeight/9
+        mapWidth: (16 * window.innerHeight) / 9
       });
     }
   }
@@ -647,7 +647,8 @@ class Application extends React.Component {
         {/*Page 1*/}
         {/*Page 1 Video*/}
         <ReactPlayer
-          style={{
+          style=
+          {{
             position: "fixed",
             top: 0,
             left: -0.1 * this.state.mapWidth,
@@ -660,7 +661,8 @@ class Application extends React.Component {
           height={1.2 * this.state.mapHeight}
           width={1.2 * this.state.mapWidth}
           fluid={true}
-          config={{
+          config=
+          {{
             vimeo: {
               playerOptions: { background: 1 }
             }
