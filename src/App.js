@@ -896,7 +896,7 @@ class Application extends React.Component {
               zIndex: 5,
               width: this.state.themeDescWidth,
               bottom: this.state.themeDescBottom,
-              right: 0,
+              right: -10,
               transition: "width 1s, bottom 1s"
             }}
           >
