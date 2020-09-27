@@ -724,13 +724,13 @@ class Application extends React.Component {
         {/*Next Arrow Button*/}
         <span
           role="button"
-          aria-label=""
+          aria-label="Next"
           onClick={this.circleFunction}
           style={{
             fontSize: 40,
             position: "fixed",
             bottom: this.state.mapHeight / 2,
-            right: 50,
+            right: 20,
             zIndex: 10
           }}
         >
@@ -739,13 +739,13 @@ class Application extends React.Component {
         {/*Prev Arrow Button*/}
         <span
           role="button"
-          aria-label=""
+          aria-label="Previous"
           onClick={this.circleFunctionDown}
           style={{
             fontSize: 40,
             position: "fixed",
             bottom: this.state.mapHeight / 2,
-            left: 50,
+            left: 20,
             zIndex: 10
           }}
         >
@@ -794,7 +794,7 @@ class Application extends React.Component {
             fontSize: 32,
             position: "fixed",
             bottom: 50,
-            right: 50,
+            right: 20,
             visibility: this.state.page1Vis,
             zIndex: 10
           }}
