@@ -80,7 +80,7 @@ class Application extends React.Component {
       scaleDistance: 13,
       themeWidth: 0.75,
       themeDescWidth: "40%",
-      themeDescBottom: 300,
+      themeDescBottom: 100,
       themeVidLeft: 700,
       page1Vis: "visible",
       page2Vis: "hidden",
@@ -504,7 +504,7 @@ class Application extends React.Component {
         aboutWidth: 0,
         themeWidth: 0.75,
         themeDescWidth: "40%",
-        themeDescBottom: 300,
+        themeDescBottom: 100,
         themeVidLeft: 700
       });
     }
@@ -528,7 +528,7 @@ class Application extends React.Component {
         aboutState: true,
         themeWidth: 0.75,
         themeDescWidth: "40%",
-        themeDescBottom: 300,
+        themeDescBottom: 100,
         themeVidLeft: 700
       });
     }
@@ -538,7 +538,7 @@ class Application extends React.Component {
         researchState: true,
         themeWidth: 0.75,
         themeDescWidth: "40%",
-        themeDescBottom: 300,
+        themeDescBottom: 100,
         themeVidLeft: 700
       });
     }
@@ -583,7 +583,7 @@ class Application extends React.Component {
         researchBorder: 0,
         themeWidth: 0.75,
         themeDescWidth: "40%",
-        themeDescBottom: 300,
+        themeDescBottom: 100,
         themeVidLeft: 700
       });
     }
