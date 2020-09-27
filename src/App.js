@@ -661,10 +661,11 @@ class Application extends React.Component {
           height={1.2 * this.state.mapHeight}
           width={1.2 * this.state.mapWidth}
           fluid={true}
+          controls={true}
           config=
           {{
             vimeo: {
-              playerOptions: { background: 1 }
+              playerOptions: { autoplay: 1 }
             }
           }}
         />
