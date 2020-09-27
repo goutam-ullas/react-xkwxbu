@@ -1373,12 +1373,12 @@ class Application extends React.Component {
               <SliderHandle />
             </SliderTrack>
           </SliderInput>
-          {/*Next Button*/}
+          {/*Prev Button*/}
           <span
             role="button"
             aria-label="Next"
             data-balloon-pos="down-right"
-            onClick={this.circleFunction}
+            onClick={this.circleFunctionDown}
             style={{
               fontSize: 32,
               position: "relative",
