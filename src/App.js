@@ -421,10 +421,17 @@ class Application extends React.Component {
 
   /*Function to Update dimensions*/
   updateDimensions() {
-    this.setState({
-      mapHeight: window.innerHeight,
-      mapWidth: window.innerWidth
-    });
+    if (window.innerWidth > window.innerHeight) {
+      this.setState({
+        mapWidth: window.innerWidth,
+        mapHeight: 9*window.innerWidth/16
+      });}
+    else{
+      this.setState({
+        mapHeight: window.innerHeight,
+        mapWidth: 16*window.innerHeight/9
+      });
+    }
   }
   /*Function to remove popups when clicked inside About, Research, or Legend windows*/
   handleAboutResearchClick(event) {
@@ -638,40 +645,41 @@ class Application extends React.Component {
       /*Main Div*/
       <div>
         {/*Page 1*/}
-          {/*Page 1 Video*/}
-          <ReactPlayer
-            style={{
-              position: "fixed",
-              top: 0,
-              left: -0.1*this.state.mapWidth,
-              visibility: this.state.page1Vis,
-              transition: "width 1s, height 1s, left 1s",
-              zIndex: 0
-            }}
-            url={this.theme0Video}
-            controls={true}
-            height={1.2*this.state.mapHeight}
-            width={1.2*this.state.mapWidth}
-            config={{
-              vimeo: {
-                playerOptions: { background: 1 }
-              }
-            }}
-          />
-          {/*Page 1 Description*/}
-          <div
-            style={{
-              padding: 20,
-              position: "absolute",
-              zIndex: 1,
-              width: 0.3*this.state.mapWidth,
-              top: 0.3*this.state.mapHeight,
-              left: 0.2*this.state.mapWidth,
-              visibility: this.state.page1Vis
-            }}
-          >
-            <text className="themeDesc">{this.theme0Desc}</text>
-          </div>
+        {/*Page 1 Video*/}
+        <ReactPlayer
+          style={{
+            position: "fixed",
+            top: 0,
+            left: -0.1 * this.state.mapWidth,
+            visibility: this.state.page1Vis,
+            transition: "width 1s, height 1s, left 1s",
+            zIndex: 0
+          }}
+          url={this.theme0Video}
+          controls={true}
+          height={1.2 * this.state.mapHeight}
+          width={1.2 * this.state.mapWidth}
+          fluid={true}
+          config={{
+            vimeo: {
+              playerOptions: { background: 1 }
+            }
+          }}
+        />
+        {/*Page 1 Description*/}
+        <div
+          style={{
+            padding: 20,
+            position: "fixed",
+            zIndex: 1,
+            width: 0.3 * this.state.mapWidth,
+            top: 0.3 * this.state.mapHeight,
+            left: 0.2 * this.state.mapWidth,
+            visibility: this.state.page1Vis
+          }}
+        >
+          <text className="themeDesc">{this.theme0Desc}</text>
+        </div>
 
         {/*Map Div*/}
         <div
