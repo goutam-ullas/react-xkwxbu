@@ -1088,7 +1088,7 @@ class Application extends React.Component {
               transition: "width 1s, bottom 1s"
             }}
           >
-            <text className="themeDesc">{this.theme5Desc1} <br/> {this.theme5Desc2}</text>
+            <text className="themeDesc">{this.theme5Desc1} <br/><br/> {this.theme5Desc2}</text>
           </div>
           {/*Theme 5 Video*/}
           <ReactPlayer
