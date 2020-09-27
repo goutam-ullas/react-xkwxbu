@@ -1388,8 +1388,25 @@ class Application extends React.Component {
               textAlign: "center"
             }}
           >
-            &#11027;
+            &#x25E7;
           </span>
+          {/*previous Button*/}
+          <span
+            role="button"
+            aria-label="Next"
+            data-balloon-pos="down-right"
+            onClick={this.circleFunction}
+            style={{
+              fontSize: 32,
+              position: "relative",
+              display: "inline",
+              marginLeft: 10,
+              marginRight: 10,
+              textAlign: "center"
+            }}
+          >
+            &#x25E8;
+          </span>          
           {/*Triangle Button*/}
           <span
             role="button"
