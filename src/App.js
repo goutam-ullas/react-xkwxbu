@@ -975,8 +975,8 @@ class Application extends React.Component {
               zIndex: this.state.videoZindex2,
               left: this.state.themeVidLeft
             }}
-            height={this.state.videoDimX2 * this.state.videoHeight}
-            width={this.state.videoDimX2 * this.state.videoWidth}
+            height={this.state.videoDimX2 * this.state.videoHeight * 1.25}
+            width={this.state.videoDimX2 * this.state.videoWidth * 1.25}
             url={this.theme2Video}
             controls={true}
             onPlay={() =>
