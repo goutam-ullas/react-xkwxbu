@@ -416,9 +416,9 @@ class Application extends React.Component {
 
   /*When clicked on Home Button*/
   indexFunction() {
-    console.log("index");
     window.location.reload(false);
   }
+
   /*Function to Update dimensions*/
   updateDimensions() {
     this.setState({
@@ -638,41 +638,40 @@ class Application extends React.Component {
       /*Main Div*/
       <div>
         {/*Page 1*/}
-        {/*Page 1 Video*/}
-        <ReactPlayer
-          className="video"
-          style={{
-            top: -50,
-            left: -50,
-            bottom: 0,
-            right: 0,
-            zIndex: 0,
-            visibility: this.state.page1Vis
-          }}
-          url={this.theme0Video}
-          height={1.1*window.innerHeight}
-          width={1.1*window.innerWidth}
-          controls={true}
-          config={{
-            vimeo: {
-              playerOptions: { background: 1 }
-            }
-          }}
-        />
-        {/*Page 1 Description*/}
-        <div
-          style={{
-            padding: 20,
-            position: "absolute",
-            zIndex: 1,
-            width: 500,
-            top: 300,
-            left: 100,
-            visibility: this.state.page1Vis
-          }}
-        >
-          <text className="themeDesc">{this.theme0Desc}</text>
-        </div>
+          {/*Page 1 Video*/}
+          <ReactPlayer
+            style={{
+              position: "fixed",
+              top: 0,
+              left: -50,
+              visibility: this.state.page1Vis,
+              transition: "width 1s, height 1s, left 1s",
+              zIndex: 0
+            }}
+            url={this.theme0Video}
+            controls={true}
+            height={this.state.mapHeight}
+            width={this.state.mapWidth}
+            config={{
+              vimeo: {
+                playerOptions: { background: 1 }
+              }
+            }}
+          />
+          {/*Page 1 Description*/}
+          <div
+            style={{
+              padding: 20,
+              position: "absolute",
+              zIndex: 1,
+              width: 500,
+              top: 300,
+              left: 100,
+              visibility: this.state.page1Vis
+            }}
+          >
+            <text className="themeDesc">{this.theme0Desc}</text>
+          </div>
 
         {/*Map Div*/}
         <div
