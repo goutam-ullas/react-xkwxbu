@@ -512,7 +512,7 @@ class Application extends React.Component {
         aboutWidth: window.innerWidth / 2,
         themeWidth: 0.375,
         themeDescWidth: "100%",
-        themeDescBottom: 500,
+        themeDescBottom: 100,
         themeVidLeft: 50,
         videoDimX1: 1
       });
@@ -591,7 +591,7 @@ class Application extends React.Component {
         researchBorder: 50,
         themeWidth: 0.375,
         themeDescWidth: "100%",
-        themeDescBottom: 500,
+        themeDescBottom: 100,
         themeVidLeft: 50,
         videoDimX1: 1
       });
