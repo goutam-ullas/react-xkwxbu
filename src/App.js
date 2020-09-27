@@ -149,6 +149,9 @@ class Application extends React.Component {
   theme7Video = "https://vimeo.com/448630300/810e46cfce";
   theme8Video = "https://vimeo.com/448630300/810e46cfce";
 
+  /* Image URLs */
+  theme2Img = "https://i.imgur.com/CniPVAT.jpg";
+
   /* Legend colors */
   godsColor = "#79859a";
   godsStoreColor = "#6999a4";
@@ -461,7 +464,7 @@ class Application extends React.Component {
 
   /* update video dimensions when video plays*/
   vidDimPlay() {
-    if ((this.state.researchState == false) || (this.state.aboutState == false)) {
+    if (this.state.researchState == false || this.state.aboutState == false) {
       this.setState({
         videoDimX1: 1,
         videoZindex1: 10
@@ -938,6 +941,11 @@ class Application extends React.Component {
             visibility: this.state.page3Vis
           }}
         >
+          {/*Theme 2 - Background image*/}
+          <img
+            style={{ top: 0, left: 0, width: this.state.mapWidth, height: this.state.mapHeight }}
+            src={this.theme2Img}
+          />
           {/*Theme 2 Description*/}
           <div
             style={{
@@ -946,6 +954,7 @@ class Application extends React.Component {
               zIndex: 5,
               width: this.state.themeDescWidth,
               bottom: this.state.themeDescBottom,
+              right: 100,
               transition: "width 1s, bottom 1s"
             }}
           >
@@ -963,18 +972,6 @@ class Application extends React.Component {
             width={this.state.videoDimX2 * this.state.videoWidth * 1.25}
             url={this.theme2Video}
             controls={true}
-            onPlay={() =>
-              this.setState({
-                videoDimX2: 1.25,
-                videoZindex2: 10
-              })
-            }
-            onPause={() =>
-              this.setState({
-                videoDimX2: 1,
-                videoZindex2: 1
-              })
-            }
           />
         </div>
 
