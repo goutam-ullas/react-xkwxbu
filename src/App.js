@@ -1,6 +1,5 @@
 /*imports*/
 import React, { useRef, useEffect, useState } from "react";
-import ReactDOM from "react-dom";
 import {
   SliderInput,
   SliderTrack,
@@ -11,6 +10,8 @@ import {
 import "@reach/slider/styles.css";
 import ReactPlayer from "react-player";
 import Typekit from "react-typekit";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faVolumeOff, faVolumeUp } from "@fortawesome/free-solid-svg-icons";
 //import { Document, Page } from "react-pdf";
 import { Document } from "react-pdf/dist/esm/entry.parcel";
 import "./style.css";
@@ -86,7 +87,9 @@ class Application extends React.Component {
       page8Vis: "hidden",
       page9Vis: "hidden",
       page10Vis: "hidden",
-      page1Play: true
+      page1Play: true,
+      volumeIcon: faVolumeOff,
+      page1mute: true
     };
     /*Bind Functions*/
     this.researchRef = React.createRef();
@@ -107,6 +110,7 @@ class Application extends React.Component {
     this.researchFunction = this.researchFunction.bind(this);
     this.sliderChange = this.sliderChange.bind(this);
     this.updateDimensions = this.updateDimensions.bind(this);
+    this.muteFunction = this.muteFunction.bind(this);
     /*Text Variables*/
     this.aboutText =
       "Goods, Gods and Goddesses alternates performances with moments of their making. In portraying the market, Begum Bazar, and the many goods, gods and goddesses that move this space, I am looking, seeking but also escaping what I’ve been rummaging. These are individual segments, fragments of a whole, a whole I may never conceive. Because the thing is, in the telling of the various parts that will build this whole, I’m left with impressions of acts about acts, of scripted acts and scripting acts, of directing in the Bazar and being directed by the Bazar, of watching people perform with intermittent awareness of my own performance. Here, bodies become, a bride, a mother, a devotee, a woman. Stores advertise wholesale deals, actors play multiple parts, wholesale roles. It is a patch of land, but a theatre, with rehearsals, scripts and episodic memories keeping gender desirable, as imagined by some, exacted and ordered, with its outlines defined, insides determined, and borders enforced.";
@@ -413,8 +417,15 @@ class Application extends React.Component {
     });
     /*Remove PopUp when clicked on About, Research, or Legend windows*/
     window.addEventListener("mousedown", this.handleAboutResearchClick);
+  }
 
-    /* set video to play - since autoplay doesnt work on many browesers*/
+  muteFunction() {
+    if (this.state.page1mute == true) {
+      this.setState({ volumeIcon: faVolumeUp, page1mute: false });
+    }
+    else{
+      this.setState({ volumeIcon: faVolumeOff, page1mute: true });
+    }
   }
 
   /*When clicked on Home Button*/
@@ -673,7 +684,7 @@ class Application extends React.Component {
           playing={this.state.page1Play}
           controls={false}
           volume={0.03}
-          muted={true}
+          muted={this.state.page1mute}
         />
         {/*Page 1 Description*/}
         <div
@@ -689,7 +700,22 @@ class Application extends React.Component {
         >
           <text className="themeDesc">{this.theme0Desc}</text>
         </div>
-
+        {/*Page 1 Mute Control*/}
+        <span
+          role="button"
+          aria-label=""
+          onClick={this.muteFunction}
+          style={{
+            fontSize: 48,
+            position: "fixed",
+            bottom: 50,
+            right: 50,
+            visibility: this.state.page1Vis,
+            zIndex: 10
+          }}
+        >
+          <FontAwesomeIcon icon={this.state.volumeIcon} />
+        </span>
         {/*Map Div*/}
         <div
           ref={el => (this.mapContainer = el)}
