@@ -415,7 +415,6 @@ class Application extends React.Component {
     window.addEventListener("mousedown", this.handleAboutResearchClick);
 
     /* set video to play - since autoplay doesnt work on many browesers*/
-    this.setState({page1Play:true});
   }
 
   /*When clicked on Home Button*/
@@ -674,6 +673,7 @@ class Application extends React.Component {
           playing={this.state.page1Play}
           controls={false}
           volume={0.03}
+          muted={true}
         />
         {/*Page 1 Description*/}
         <div
