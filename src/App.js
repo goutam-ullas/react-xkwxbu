@@ -785,12 +785,9 @@ class Application extends React.Component {
     }));
   }
 
-  render() {
-    return (
-      /*Main Div*/
-      <div>
-        {/*Next Arrow Button*/}
-        <span
+
+        /*Next Arrow Button*/
+/*        <span
           role="button"
           aria-label="Next"
           onClick={this.circleFunction}
@@ -804,8 +801,9 @@ class Application extends React.Component {
         >
           &#62;
         </span>
-        {/*Prev Arrow Button*/}
-        <span
+*/
+        /*Prev Arrow Button*/
+/*        <span
           role="button"
           aria-label="Previous"
           onClick={this.circleFunctionDown}
@@ -819,6 +817,12 @@ class Application extends React.Component {
         >
           &#60;
         </span>
+*/
+
+  render() {
+    return (
+      /*Main Div*/
+      <div>
         {/*Page 1*/}
         {/*Page 1 Video*/}
         <ReactPlayer
