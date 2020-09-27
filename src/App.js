@@ -129,8 +129,13 @@ class Application extends React.Component {
       "I’ve laid out the scenes now, to arrange them, find an order, a cause and effect, the hero and the anti-hero and discern the rehearsal from the act, the actor from the director, the stage from the ground, to sift memories from scripts and index this audience at once synchronized and performing.";
     this.theme3Desc =
       "This thesis looks at an urban market, Begum Bazar situated in the old city of Hyderabad and its relation to gender. The work, initially set out to explore kitchen objects and their place in shaping one’s life, eventually becomes an exploration into how, space and gender narratives co-exist and help sustain each other. By using the example of this market situated in a major metropolitan Indian city, and through interviews of people occupying and visiting the space, the work speculates on how social hierarchies and practices gain ground.";
-      this.theme5Desc1 = "Dear Common Good,";
-      this.theme5Desc2 = "I’m a designer, currently working on a short film. I have for the longest time followed your chief executive, Mr. Siddharth Gupta and his irrefutable take on naming brands. I particularly identify with his naming of the Ganga pressure cooker; my friend’s mother had the same name and we were close friends. My friend, when she got married, also received an entire Ganga cooking range as a wedding gift. I believe, the groom’s family were quite particular about what gifts they wanted. And me, I’ve never taken a meal without bread made from the wheat flour, Annapurna. As best as I can remember, I did not have a friend by this name, though, my grandmother, a devout lady, prayed without end to the goddess, Annapurna. Mr. Gupta is a revered Ad Man, and I’d love to have him sit for a talk. This interview, I strongly believe, will put the rest of the plot into perspective.";
+    this.theme5Desc1 = "Dear Common Good,";
+    this.theme5Desc2 =
+      "I’m a designer, currently working on a short film. I have for the longest time followed your chief executive, Mr. Siddharth Gupta and his irrefutable take on naming brands.";
+    this.theme5Desc3 =
+      "I particularly identify with his naming of the Ganga pressure cooker; my friend’s mother had the same name and we were close friends. My friend, when she got married, also received an entire Ganga cooking range as a wedding gift. I believe, the groom’s family were quite particular about what gifts they wanted. And me, I’ve never taken a meal without bread made from the wheat flour, Annapurna. As best as I can remember, I did not have a friend by this name, though, my grandmother, a devout lady, prayed without end to the goddess, Annapurna.";
+    this.theme5Desc4 =
+      "Mr. Gupta is a revered Ad Man, and I’d love to have him sit for a talk. This interview, I strongly believe, will put the rest of the plot into perspective.";
   }
   /* Video URLs*/
   theme0Video = "https://player.vimeo.com/video/462185422";
@@ -1088,7 +1093,16 @@ class Application extends React.Component {
               transition: "width 1s, bottom 1s"
             }}
           >
-            <text className="themeDesc">{this.theme5Desc1} <br/><br/> {this.theme5Desc2}</text>
+            <text className="themeDesc">
+              {this.theme5Desc1}
+              <br />
+              <br />
+              {this.theme5Desc2}
+              <br />
+              {this.theme5Desc3}
+              <br />
+              {this.theme5Desc4}
+            </text>
           </div>
           {/*Theme 5 Video*/}
           <ReactPlayer
@@ -1370,7 +1384,7 @@ class Application extends React.Component {
             }}
           >
             &#x25E8;
-          </span>          
+          </span>
           {/*Triangle Button*/}
           <span
             role="button"
