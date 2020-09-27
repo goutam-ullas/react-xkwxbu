@@ -829,8 +829,8 @@ class Application extends React.Component {
         {/*Page 1 Mute Control*/}
           <span
             role="button"
-            aria-label="Volume"
-            data-balloon-pos="bottom-right"
+            aria-label="Sound"
+            data-balloon-pos="left"
             onClick={this.muteFunction}
             style={{
               fontSize: 32,
