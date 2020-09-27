@@ -141,12 +141,12 @@ class Application extends React.Component {
   /* Video URLs*/
   theme0Video = "https://player.vimeo.com/video/462185422";
   theme1Video = "https://vimeo.com/448630508/11ec6d4d54";
-  theme2Video = "https://vimeo.com/448630508/11ec6d4d54";
-  theme3Video = "https://vimeo.com/448632066/2ab228f98c";
-  theme4Video = "https://vimeo.com/448631454/d006e93a41";
-  theme5Video = "https://vimeo.com/448631543/98f339b864";
-  theme6Video = "https://vimeo.com/454107513/7c4b053989";
-  theme7Video = "https://vimeo.com/448631543/98f339b864";
+  theme2Video = "https://vimeo.com/448632066/2ab228f98c";
+  theme3Video = "https://vimeo.com/448631454/d006e93a41";
+  theme4Video = "https://vimeo.com/448631543/98f339b864";
+  theme5Video = "https://vimeo.com/454107513/7c4b053989";
+  theme6Video = "https://vimeo.com/448631543/98f339b864";
+  theme7Video = "https://vimeo.com/448630300/810e46cfce";
   theme8Video = "https://vimeo.com/448630300/810e46cfce";
 
   /* Legend colors */
