@@ -706,7 +706,7 @@ class Application extends React.Component {
           aria-label=""
           onClick={this.muteFunction}
           style={{
-            fontSize: 48,
+            fontSize: 32,
             position: "fixed",
             bottom: 50,
             right: 50,
