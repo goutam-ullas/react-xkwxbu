@@ -671,11 +671,6 @@ class Application extends React.Component {
           height={1.2 * this.state.mapHeight}
           width={1.2 * this.state.mapWidth}
           fluid={true}
-          config={{
-            vimeo: {
-              playerOptions: { autoplay: 1 }
-            }
-          }}
           playing={this.state.page1Play}
           controls={false}
           volume={0.03}
