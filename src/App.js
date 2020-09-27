@@ -80,8 +80,8 @@ class Application extends React.Component {
       scaleDistance: 13,
       themeWidth: 0.75,
       themeDescWidth: "40%",
-      themeDescBottom: 100,
-      themeVidLeft: 700,
+      themeDescBottom: 400,
+      themeVidLeft: 50,
       page1Vis: "visible",
       page2Vis: "hidden",
       page3Vis: "hidden",
@@ -118,6 +118,7 @@ class Application extends React.Component {
     this.sliderChange = this.sliderChange.bind(this);
     this.updateDimensions = this.updateDimensions.bind(this);
     this.muteFunction = this.muteFunction.bind(this);
+    this.vidDimPlay = this.vidDimPlay.bind(this);
     /*Text Variables*/
     this.aboutText =
       "Goods, Gods and Goddesses alternates performances with moments of their making. In portraying the market, Begum Bazar, and the many goods, gods and goddesses that move this space, I am looking, seeking but also escaping what I’ve been rummaging. These are individual segments, fragments of a whole, a whole I may never conceive. Because the thing is, in the telling of the various parts that will build this whole, I’m left with impressions of acts about acts, of scripted acts and scripting acts, of directing in the Bazar and being directed by the Bazar, of watching people perform with intermittent awareness of my own performance. Here, bodies become, a bride, a mother, a devotee, a woman. Stores advertise wholesale deals, actors play multiple parts, wholesale roles. It is a patch of land, but a theatre, with rehearsals, scripts and episodic memories keeping gender desirable, as imagined by some, exacted and ordered, with its outlines defined, insides determined, and borders enforced.";
@@ -457,6 +458,21 @@ class Application extends React.Component {
       });
     }
   }
+
+  /* update video dimensions when video plays*/
+  vidDimPlay() {
+    if ((this.state.researchState == false) || (this.state.aboutState == false)) {
+      this.setState({
+        videoDimX1: 1,
+        videoZindex1: 10
+      });
+    } else {
+      this.setState({
+        videoDimX1: 1.25,
+        videoZindex1: 10
+      });
+    }
+  }
   /*Function to remove popups when clicked inside About, Research, or Legend windows*/
   handleAboutResearchClick(event) {
     if (
@@ -496,16 +512,17 @@ class Application extends React.Component {
         aboutWidth: window.innerWidth / 2,
         themeWidth: 0.375,
         themeDescWidth: "100%",
-        themeDescBottom: 550,
-        themeVidLeft: 100
+        themeDescBottom: 500,
+        themeVidLeft: 50,
+        videoDimX1: 1
       });
     } else {
       this.setState({
         aboutWidth: 0,
         themeWidth: 0.75,
         themeDescWidth: "40%",
-        themeDescBottom: 100,
-        themeVidLeft: 700
+        themeDescBottom: 400,
+        themeVidLeft: 50
       });
     }
   }
@@ -528,8 +545,8 @@ class Application extends React.Component {
         aboutState: true,
         themeWidth: 0.75,
         themeDescWidth: "40%",
-        themeDescBottom: 100,
-        themeVidLeft: 700
+        themeDescBottom: 400,
+        themeVidLeft: 50
       });
     }
     if (this.state.researchState == false) {
@@ -538,8 +555,8 @@ class Application extends React.Component {
         researchState: true,
         themeWidth: 0.75,
         themeDescWidth: "40%",
-        themeDescBottom: 100,
-        themeVidLeft: 700
+        themeDescBottom: 400,
+        themeVidLeft: 50
       });
     }
     if (this.state.legendState == true) {
@@ -574,8 +591,9 @@ class Application extends React.Component {
         researchBorder: 50,
         themeWidth: 0.375,
         themeDescWidth: "100%",
-        themeDescBottom: 550,
-        themeVidLeft: 100
+        themeDescBottom: 500,
+        themeVidLeft: 50,
+        videoDimX1: 1
       });
     } else {
       this.setState({
@@ -583,8 +601,8 @@ class Application extends React.Component {
         researchBorder: 0,
         themeWidth: 0.75,
         themeDescWidth: "40%",
-        themeDescBottom: 100,
-        themeVidLeft: 700
+        themeDescBottom: 400,
+        themeVidLeft: 50
       });
     }
   }
@@ -827,22 +845,22 @@ class Application extends React.Component {
           <text className="themeDesc">{this.theme0Desc}</text>
         </div>
         {/*Page 1 Mute Control*/}
-          <span
-            role="button"
-            aria-label="Sound"
-            data-balloon-pos="left"
-            onClick={this.muteFunction}
-            style={{
-              fontSize: 32,
-              position: "fixed",
-              top: 15,
-              right: 170,
-              visibility: this.state.page1Vis,
-              zIndex: 10
-            }}
-          >
-            <FontAwesomeIcon icon={this.state.volumeIcon} />
-          </span>
+        <span
+          role="button"
+          aria-label="Sound"
+          data-balloon-pos="left"
+          onClick={this.muteFunction}
+          style={{
+            fontSize: 32,
+            position: "fixed",
+            top: 15,
+            right: 170,
+            visibility: this.state.page1Vis,
+            zIndex: 10
+          }}
+        >
+          <FontAwesomeIcon icon={this.state.volumeIcon} />
+        </span>
         {/*Map Div*/}
         <div
           ref={el => (this.mapContainer = el)}
@@ -878,6 +896,7 @@ class Application extends React.Component {
               zIndex: 5,
               width: this.state.themeDescWidth,
               bottom: this.state.themeDescBottom,
+              right: 0,
               transition: "width 1s, bottom 1s"
             }}
           >
@@ -888,20 +907,15 @@ class Application extends React.Component {
             className="video"
             ref={el => (this.video1Ref = el)}
             style={{
-              top: this.state.themeGap / 3,
+              bottom: this.state.themeGap / 3,
               zIndex: this.state.videoZindex1,
               left: this.state.themeVidLeft
             }}
-            height={this.state.videoDimX1 * this.state.videoHeight}
-            width={this.state.videoDimX1 * this.state.videoWidth}
+            height={this.state.videoDimX1 * this.state.videoHeight * 1.25}
+            width={this.state.videoDimX1 * this.state.videoWidth * 1.25}
             url={this.theme1Video}
             controls={true}
-            onPlay={() =>
-              this.setState({
-                videoDimX1: 1.25,
-                videoZindex1: 10
-              })
-            }
+            onPlay={this.vidDimPlay}
             onPause={() =>
               this.setState({
                 videoDimX1: 1,
