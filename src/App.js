@@ -1393,7 +1393,7 @@ class Application extends React.Component {
           {/*Triangle Button*/}
           <span
             role="button"
-            aria-label="Triangle Button"
+            aria-label="Map"
             data-balloon-pos="down-right"
             onClick={this.triangleFunction}
             style={{
