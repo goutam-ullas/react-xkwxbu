@@ -860,7 +860,7 @@ class Application extends React.Component {
         {/*Page 1 Mute Control*/}
         <span
           role="button"
-          aria-label=""
+          aria-label="Volume"
           onClick={this.muteFunction}
           style={{
             fontSize: 32,
