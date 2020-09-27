@@ -435,7 +435,7 @@ class Application extends React.Component {
 
   /*Function to Update dimensions*/
   updateDimensions() {
-    if (window.innerWidth > window.innerHeight) {
+    if (window.innerWidth >= window.innerHeight) {
       this.setState({
         mapWidth: window.innerWidth,
         mapHeight: (9 * window.innerWidth) / 16
