@@ -413,6 +413,9 @@ class Application extends React.Component {
     });
     /*Remove PopUp when clicked on About, Research, or Legend windows*/
     window.addEventListener("mousedown", this.handleAboutResearchClick);
+
+    /* set video to play - since autoplay doesnt work on many browesers*/
+    this.setState({page1Play:true});
   }
 
   /*When clicked on Home Button*/
