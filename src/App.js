@@ -827,10 +827,10 @@ class Application extends React.Component {
           <text className="themeDesc">{this.theme0Desc}</text>
         </div>
         {/*Page 1 Mute Control*/}
-        <div>
           <span
             role="button"
             aria-label="Volume"
+            data-balloon-pos="bottom-right"
             onClick={this.muteFunction}
             style={{
               fontSize: 32,
@@ -843,7 +843,6 @@ class Application extends React.Component {
           >
             <FontAwesomeIcon icon={this.state.volumeIcon} />
           </span>
-        </div>
         {/*Map Div*/}
         <div
           ref={el => (this.mapContainer = el)}
