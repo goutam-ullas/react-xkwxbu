@@ -85,7 +85,8 @@ class Application extends React.Component {
       page7Vis: "hidden",
       page8Vis: "hidden",
       page9Vis: "hidden",
-      page10Vis: "hidden"
+      page10Vis: "hidden",
+      page1Play: true
     };
     /*Bind Functions*/
     this.researchRef = React.createRef();
@@ -580,10 +581,18 @@ class Application extends React.Component {
       this.circleState += 1;
     }
     if (this.circleState == 0) {
-      this.setState({ page1Vis: "visible", page9Vis: "hidden" });
+      this.setState({
+        page1Vis: "visible",
+        page9Vis: "hidden",
+        page1Play: true
+      });
     }
     if (this.circleState == 1) {
-      this.setState({ page2Vis: "visible", page1Vis: "hidden" });
+      this.setState({
+        page2Vis: "visible",
+        page1Vis: "hidden",
+        page1Play: false
+      });
     }
     if (this.circleState == 2) {
       this.setState({ page3Vis: "visible", page2Vis: "hidden" });
@@ -647,8 +656,7 @@ class Application extends React.Component {
         {/*Page 1*/}
         {/*Page 1 Video*/}
         <ReactPlayer
-          style=
-          {{
+          style={{
             position: "fixed",
             top: 0,
             left: -0.1 * this.state.mapWidth,
@@ -657,17 +665,17 @@ class Application extends React.Component {
             zIndex: 0
           }}
           url={this.theme0Video}
-          controls={true}
           height={1.2 * this.state.mapHeight}
           width={1.2 * this.state.mapWidth}
           fluid={true}
-          controls={true}
-          config=
-          {{
+          config={{
             vimeo: {
               playerOptions: { autoplay: 1 }
             }
           }}
+          playing={this.state.page1Play}
+          controls={false}
+          volume={0.03}
         />
         {/*Page 1 Description*/}
         <div
