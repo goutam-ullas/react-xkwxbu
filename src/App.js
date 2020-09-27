@@ -111,6 +111,7 @@ class Application extends React.Component {
     this.handleAboutResearchClick = this.handleAboutResearchClick.bind(this);
     this.circleFunction = this.circleFunction.bind(this);
     this.circleFunctionDown = this.circleFunctionDown.bind(this);
+    this.triangleFunction = this.triangleFunction.bind(this);
     this.aboutFunction = this.aboutFunction.bind(this);
     this.legendFunction = this.legendFunction.bind(this);
     this.researchFunction = this.researchFunction.bind(this);
@@ -157,6 +158,7 @@ class Application extends React.Component {
   /* Theme Position Variables*/
   circleState = 0;
   maxThemes = 8;
+  triangleState = false;
   /*On Mount*/
   componentDidMount() {
     /*Update Dimenstions based on screen size*/
@@ -585,7 +587,6 @@ class Application extends React.Component {
   }
   /*When clicked on Next button*/
   circleFunction() {
-    console.log("circle");
     this.setState({
       popUpH: 0,
       popUpW: 0,
@@ -593,6 +594,7 @@ class Application extends React.Component {
       layerName: "",
       popUpPad: 0
     });
+    this.triangleState = false;
     if (this.circleState > this.maxThemes - 1) {
       this.circleState = 0;
     } else {
@@ -634,7 +636,7 @@ class Application extends React.Component {
       this.setState({ page9Vis: "visible", page8Vis: "hidden" });
     }
   }
-    /*When clicked on Prev button*/
+  /*When clicked on Prev button*/
   circleFunctionDown() {
     this.setState({
       popUpH: 0,
@@ -643,6 +645,7 @@ class Application extends React.Component {
       layerName: "",
       popUpPad: 0
     });
+    this.triangleState = false;
     if (this.circleState == 0) {
       this.circleState = this.maxThemes;
     } else {
@@ -658,7 +661,7 @@ class Application extends React.Component {
     if (this.circleState == 1) {
       this.setState({
         page2Vis: "visible",
-        page3Vis: "hidden",
+        page3Vis: "hidden"
       });
     }
     if (this.circleState == 2) {
@@ -680,9 +683,74 @@ class Application extends React.Component {
       this.setState({ page8Vis: "visible", page9Vis: "hidden" });
     }
     if (this.circleState == 8) {
-      this.setState({ page9Vis: "visible", page1Vis: "hidden", page1Play: false });
+      this.setState({
+        page9Vis: "visible",
+        page1Vis: "hidden",
+        page1Play: false
+      });
     }
     console.log(this.circleState);
+  }
+
+  /*When clicked on Next button*/
+  triangleFunction() {
+    this.setState({
+      popUpH: 0,
+      popUpW: 0,
+      pointName: "",
+      layerName: "",
+      popUpPad: 0
+    });
+    if (this.triangleState == false) {
+      this.setState({
+        page1Vis: "hidden",
+        page2Vis: "hidden",
+        page3Vis: "hidden",
+        page4Vis: "hidden",
+        page5Vis: "hidden",
+        page6Vis: "hidden",
+        page7Vis: "hidden",
+        page8Vis: "hidden",
+        page9Vis: "hidden",
+        page1Play: false
+      });
+    } else {
+      if (this.circleState == 0) {
+        this.setState({
+          page1Vis: "visible",
+          page1Play: true
+        });
+      }
+      if (this.circleState == 1) {
+        this.setState({
+          page2Vis: "visible"
+        });
+      }
+      if (this.circleState == 2) {
+        this.setState({ page3Vis: "visible" });
+      }
+      if (this.circleState == 3) {
+        this.setState({ page4Vis: "visible" });
+      }
+      if (this.circleState == 4) {
+        this.setState({ page5Vis: "visible" });
+      }
+      if (this.circleState == 5) {
+        this.setState({ page6Vis: "visible" });
+      }
+      if (this.circleState == 6) {
+        this.setState({ page7Vis: "visible" });
+      }
+      if (this.circleState == 7) {
+        this.setState({ page8Vis: "visible" });
+      }
+      if (this.circleState == 8) {
+        this.setState({
+          page9Vis: "visible"
+        });
+      }
+    }
+    this.triangleState = !this.triangleState;
   }
 
   /*When Slider position is changed*/
