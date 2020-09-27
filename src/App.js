@@ -515,7 +515,7 @@ class Application extends React.Component {
         aboutWidth: window.innerWidth / 2,
         themeWidth: 0.375,
         themeDescWidth: "100%",
-        themeDescBottom: 100,
+        themeDescBottom: 80,
         themeVidLeft: 50,
         videoDimX1: 1
       });
@@ -594,7 +594,7 @@ class Application extends React.Component {
         researchBorder: 50,
         themeWidth: 0.375,
         themeDescWidth: "100%",
-        themeDescBottom: 100,
+        themeDescBottom: 80,
         themeVidLeft: 50,
         videoDimX1: 1
       });
@@ -943,7 +943,7 @@ class Application extends React.Component {
         >
           {/*Theme 2 - Background image*/}
           <img
-            style={{ top: 0, left: 0, width: this.state.mapWidth, height: this.state.mapHeight }}
+            style={{ position: "fixed", top: 0, right: 0, height: this.state.mapHeight }}
             src={this.theme2Img}
           />
           {/*Theme 2 Description*/}
@@ -954,7 +954,7 @@ class Application extends React.Component {
               zIndex: 5,
               width: this.state.themeDescWidth,
               bottom: this.state.themeDescBottom,
-              right: 100,
+              right: -10,
               transition: "width 1s, bottom 1s"
             }}
           >
