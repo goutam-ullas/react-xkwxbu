@@ -643,15 +643,15 @@ class Application extends React.Component {
             style={{
               position: "fixed",
               top: 0,
-              left: -50,
+              left: -0.1*this.state.mapWidth,
               visibility: this.state.page1Vis,
               transition: "width 1s, height 1s, left 1s",
               zIndex: 0
             }}
             url={this.theme0Video}
             controls={true}
-            height={this.state.mapHeight}
-            width={this.state.mapWidth}
+            height={1.2*this.state.mapHeight}
+            width={1.2*this.state.mapWidth}
             config={{
               vimeo: {
                 playerOptions: { background: 1 }
@@ -664,9 +664,9 @@ class Application extends React.Component {
               padding: 20,
               position: "absolute",
               zIndex: 1,
-              width: 500,
-              top: 300,
-              left: 100,
+              width: 0.3*this.state.mapWidth,
+              top: 0.3*this.state.mapHeight,
+              left: 0.2*this.state.mapWidth,
               visibility: this.state.page1Vis
             }}
           >
