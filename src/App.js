@@ -785,40 +785,6 @@ class Application extends React.Component {
     }));
   }
 
-
-        /*Next Arrow Button*/
-/*        <span
-          role="button"
-          aria-label="Next"
-          onClick={this.circleFunction}
-          style={{
-            fontSize: 72,
-            position: "fixed",
-            bottom: this.state.mapHeight / 2,
-            right: 20,
-            zIndex: 10
-          }}
-        >
-          &#62;
-        </span>
-*/
-        /*Prev Arrow Button*/
-/*        <span
-          role="button"
-          aria-label="Previous"
-          onClick={this.circleFunctionDown}
-          style={{
-            fontSize: 72,
-            position: "fixed",
-            bottom: this.state.mapHeight / 2,
-            left: 20,
-            zIndex: 10
-          }}
-        >
-          &#60;
-        </span>
-*/
-
   render() {
     return (
       /*Main Div*/
@@ -846,13 +812,13 @@ class Application extends React.Component {
         {/*Page 1 Description*/}
         <div
           style={{
-            padding: 20,
+            padding: 50,
             position: "fixed",
-            zIndex: 1,
             width: 0.3 * this.state.mapWidth,
             top: 0.3 * this.state.mapHeight,
             left: 0.2 * this.state.mapWidth,
-            visibility: this.state.page1Vis
+            visibility: this.state.page1Vis,
+            zIndex: 1
           }}
         >
           <text className="themeDesc">{this.theme0Desc}</text>
