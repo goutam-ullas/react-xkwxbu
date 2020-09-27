@@ -680,7 +680,7 @@ class Application extends React.Component {
       this.setState({ page8Vis: "visible", page9Vis: "hidden" });
     }
     if (this.circleState == 8) {
-      this.setState({ page9Vis: "visible", page0Vis: "hidden", page1Play: false });
+      this.setState({ page9Vis: "visible", page1Vis: "hidden", page1Play: false });
     }
     console.log(this.circleState);
   }
