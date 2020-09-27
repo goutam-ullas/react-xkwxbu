@@ -1313,7 +1313,7 @@ class Application extends React.Component {
         </div>
 
         {/*Title Bar*/}
-        <div className="titlebar" style={{ top: -10, width: 550, zIndex: 10 }}>
+        <div className="titlebar" style={{ top: -10, width: 600, zIndex: 10 }}>
           <Typekit kitId="bor7jxc" />
           {/*Home Button*/}
           <span
@@ -1376,7 +1376,7 @@ class Application extends React.Component {
           {/*Prev Button*/}
           <span
             role="button"
-            aria-label="Next"
+            aria-label="Previous"
             data-balloon-pos="down-right"
             onClick={this.circleFunctionDown}
             style={{
