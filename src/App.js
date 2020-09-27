@@ -1099,8 +1099,10 @@ class Application extends React.Component {
               <br />
               {this.theme5Desc2}
               <br />
+              <br />              
               {this.theme5Desc3}
               <br />
+              <br />              
               {this.theme5Desc4}
             </text>
           </div>
