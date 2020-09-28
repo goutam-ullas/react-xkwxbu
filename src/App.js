@@ -938,7 +938,8 @@ class Application extends React.Component {
             left: (window.innerWidth * this.state.themeWidth) / 6,
             width: this.state.themeWidth * window.innerWidth,
             transition: "width 1s, left 1s",
-            visibility: this.state.page3Vis
+            visibility: this.state.page3Vis,
+            backgroundColor: "transparent"
           }}
         >
           {/*Theme 2 - Background image*/}
