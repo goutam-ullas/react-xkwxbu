@@ -967,7 +967,7 @@ class Application extends React.Component {
               position: "fixed",
               zIndex: 5,
               width: "40%",
-              top: 200,
+              bottom: this.state.mapHeight / 6,
               left: 50,
               transition: "width 1s, bottom 1s"
             }}
@@ -978,7 +978,7 @@ class Application extends React.Component {
           <ReactPlayer
             className="video"
             style={{
-              bottom: this.state.themeGap / 4,
+              bottom: this.state.mapHeight / 4,
               zIndex: this.state.videoZindex2,
               right: this.state.themeVidRight,
               transition: "right 1s"
