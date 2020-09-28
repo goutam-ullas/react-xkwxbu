@@ -961,7 +961,7 @@ class Application extends React.Component {
               zIndex: 5,
               width: this.state.themeDescWidth,
               bottom: this.state.themeDescBottom,
-              right: -10,
+              left: this.state.themeVidLeft,
               transition: "width 1s, bottom 1s"
             }}
           >
@@ -973,7 +973,7 @@ class Application extends React.Component {
             style={{
               top: this.state.themeGap / 3,
               zIndex: this.state.videoZindex2,
-              left: this.state.themeVidLeft
+              right: 100
             }}
             height={this.state.videoDimX2 * this.state.videoHeight * 1.25}
             width={this.state.videoDimX2 * this.state.videoWidth * 1.25}
