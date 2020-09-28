@@ -84,7 +84,7 @@ class Application extends React.Component {
       themeDescBottom: 250,
       themeVidLeft: 50,
       theme3DescLeft: 500,
-      themeVidRight: window.innerWidth/3,
+      themeVidRight: 0.29*window.innerWidth,
       page1Vis: "visible",
       page2Vis: "hidden",
       page3Vis: "hidden",
@@ -535,7 +535,7 @@ class Application extends React.Component {
         theme3DescLeft: 500,
         theme3DescTop: window.innerHeight/4, 
         theme3VidTop: window.innerHeight/4,
-        themeVidRight: window.innerWidth/3
+        themeVidRight: 0.29*window.innerWidth
       });
     }
   }
@@ -565,7 +565,7 @@ class Application extends React.Component {
         themeVidRight: window.innerWidth/21,
         theme3VidTop: window.innerHeight/4,   
         theme3DescTop: window.innerHeight/4,      
-        themeVidRight: window.innerWidth/3
+        themeVidRight: 0.29*window.innerWidth
       });
     }
     if (this.state.researchState == false) {
@@ -580,7 +580,7 @@ class Application extends React.Component {
         theme3DescLeft: 500,
         theme3DescTop: window.innerHeight/4, 
         theme3VidTop: window.innerHeight/4,        
-        themeVidRight: window.innerWidth/3
+        themeVidRight: 0.29*window.innerWidth
       });
     }
     if (this.state.legendState == true) {
@@ -636,7 +636,7 @@ class Application extends React.Component {
         theme3DescLeft: 500,
         theme3DescTop: window.innerHeight/4,
         theme3VidTop: window.innerHeight/4,
-        themeVidRight: window.innerWidth/3
+        themeVidRight: 0.29*window.innerWidth
       });
     }
   }
