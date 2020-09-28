@@ -95,7 +95,9 @@ class Application extends React.Component {
       page10Vis: "hidden",
       page1Play: true,
       volumeIcon: faVolumeOff,
-      page1mute: true
+      page1mute: true,
+      theme3DescTop: window.innerHeight/3,
+      theme3VidTop: window.innerHeight/3
     };
     /*Bind Functions*/
     this.researchRef = React.createRef();
@@ -519,6 +521,8 @@ class Application extends React.Component {
         themeDescBottom: 50,
         themeVidLeft: 50,
         themeVidRight: window.innerWidth/21,
+        theme3DescTop: 0.6*window.innerHeight, 
+        theme3VidTop: window.innerHeight/8,
         videoDimX1: 1
       });
     } else {
@@ -528,6 +532,8 @@ class Application extends React.Component {
         themeDescWidth: "40%",
         themeDescBottom: 250,
         themeVidLeft: 50,
+        theme3DescTop: window.innerHeight/3, 
+        theme3VidTop: window.innerHeight/3,
         themeVidRight: window.innerWidth/3
       });
     }
@@ -553,7 +559,10 @@ class Application extends React.Component {
         themeDescWidth: "40%",
         themeDescBottom: 250,
         themeVidLeft: 50,
-        themeVidRight: window.innerWidth/21
+        themeVidRight: window.innerWidth/21,
+        theme3VidTop: window.innerHeight/3,   
+        theme3DescTop: window.innerHeight/3,      
+        themeVidRight: window.innerWidth/3
       });
     }
     if (this.state.researchState == false) {
@@ -564,6 +573,8 @@ class Application extends React.Component {
         themeDescWidth: "40%",
         themeDescBottom: 250,
         themeVidLeft: 50,
+        theme3DescTop: window.innerHeight/3, 
+        theme3VidTop: window.innerHeight/3,        
         themeVidRight: window.innerWidth/3
       });
     }
@@ -601,6 +612,8 @@ class Application extends React.Component {
         themeDescWidth: "100%",
         themeDescBottom: 50,
         themeVidLeft: 50,
+        theme3DescTop: 0.6*window.innerHeight, 
+        theme3VidTop: window.innerHeight/8,
         themeVidRight: window.innerWidth/21,
         videoDimX1: 1
       });
@@ -612,6 +625,8 @@ class Application extends React.Component {
         themeDescWidth: "40%",
         themeDescBottom: 250,
         themeVidLeft: 50,
+        theme3DescTop: window.innerHeight/3,
+        theme3VidTop: window.innerHeight/3,
         themeVidRight: window.innerWidth/3
       });
     }
@@ -1010,9 +1025,9 @@ class Application extends React.Component {
               position: "absolute",
               zIndex: 5,
               width: this.state.themeDescWidth,
-              bottom: this.state.themeDescBottom,
-              right: -10,
-              transition: "width 1s, bottom 1s"
+              top: 0.9*this.state.theme3DescTop,
+              right: 20,
+              transition: "width 1s, top 1s"
             }}
           >
             <text className="themeDesc">
@@ -1033,9 +1048,10 @@ class Application extends React.Component {
             className="video"
             ref={el => (this.video1Ref = el)}
             style={{
-              bottom: this.state.themeGap / 4,
+              top: this.state.theme3VidTop,
               zIndex: this.state.videoZindex1,
-              left: this.state.themeVidLeft
+              left: this.state.themeVidLeft,
+              transition: "top 1s"
             }}
             height={this.state.videoDimX1 * this.state.videoHeight * 1.25}
             width={this.state.videoDimX1 * this.state.videoWidth * 1.25}
