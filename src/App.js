@@ -130,20 +130,20 @@ class Application extends React.Component {
       "I’ve laid out the scenes now, to arrange them, find an order, a cause and effect, the hero and the anti-hero and discern the rehearsal from the act, the actor from the director, the stage from the ground, to sift memories from scripts and index this audience at once synchronized and performing.";
     this.theme3Desc =
       "This thesis looks at an urban market, Begum Bazar situated in the old city of Hyderabad and its relation to gender. The work, initially set out to explore kitchen objects and their place in shaping one’s life, eventually becomes an exploration into how, space and gender narratives co-exist and help sustain each other. By using the example of this market situated in a major metropolitan Indian city, and through interviews of people occupying and visiting the space, the work speculates on how social hierarchies and practices gain ground.";
-    this.theme5Desc1 = "Dear Common Good,";
-    this.theme5Desc2 =
+    this.theme3Desc1 = "Dear Common Good,";
+    this.theme3Desc2 =
       "I’m a designer, currently working on a short film. I have for the longest time followed your chief executive, Mr. Siddharth Gupta and his irrefutable take on naming brands.";
-    this.theme5Desc3 =
+    this.theme3Desc3 =
       "I particularly identify with his naming of the Ganga pressure cooker; my friend’s mother had the same name and we were close friends. My friend, when she got married, also received an entire Ganga cooking range as a wedding gift. I believe, the groom’s family were quite particular about what gifts they wanted. And me, I’ve never taken a meal without bread made from the wheat flour, Annapurna. As best as I can remember, I did not have a friend by this name, though, my grandmother, a devout lady, prayed without end to the goddess, Annapurna.";
-    this.theme5Desc4 =
+    this.theme3Desc4 =
       "Mr. Gupta is a revered Ad Man, and I’d love to have him sit for a talk. This interview, I strongly believe, will put the rest of the plot into perspective.";
   }
   /* Video URLs*/
   theme0Video = "https://player.vimeo.com/video/462185422";
   theme1Video = "https://vimeo.com/448630508/11ec6d4d54";
   theme2Video = "https://vimeo.com/448632066/2ab228f98c";
-  theme3Video = "https://vimeo.com/448631454/d006e93a41";
-  theme4Video = "https://vimeo.com/448631543/98f339b864";
+  theme3Video = "https://vimeo.com/448631543/98f339b864";
+  theme4Video = "https://vimeo.com/448631454/d006e93a41";
   theme5Video = "https://vimeo.com/454107513/7c4b053989";
   theme6Video = "https://vimeo.com/448631543/98f339b864";
   theme7Video = "https://vimeo.com/448630300/810e46cfce";
@@ -943,7 +943,12 @@ class Application extends React.Component {
         >
           {/*Theme 2 - Background image*/}
           <img
-            style={{ position: "fixed", top: 0, right: 0, height: this.state.mapHeight }}
+            style={{
+              position: "fixed",
+              top: 0,
+              right: 0,
+              height: this.state.mapHeight
+            }}
             src={this.theme2Img}
           />
           {/*Theme 2 Description*/}
@@ -996,33 +1001,41 @@ class Application extends React.Component {
               zIndex: 5,
               width: this.state.themeDescWidth,
               bottom: this.state.themeDescBottom,
+              right: -10,
               transition: "width 1s, bottom 1s"
             }}
           >
-            <text className="themeDesc">{this.theme2Desc}</text>
+            <text className="themeDesc">
+              {this.theme3Desc1}
+              <br />
+              <br />
+              {this.theme3Desc2}
+              <br />
+              <br />
+              {this.theme3Desc3}
+              <br />
+              <br />
+              {this.theme3Desc4}
+            </text>
           </div>
           {/*Theme 3 Video*/}
           <ReactPlayer
             className="video"
+            ref={el => (this.video1Ref = el)}
             style={{
-              top: this.state.themeGap / 3,
-              zIndex: this.state.videoZindex3,
+              bottom: this.state.themeGap / 3,
+              zIndex: this.state.videoZindex1,
               left: this.state.themeVidLeft
             }}
-            height={this.state.videoDimX3 * this.state.videoHeight}
-            width={this.state.videoDimX3 * this.state.videoWidth}
+            height={this.state.videoDimX1 * this.state.videoHeight * 1.25}
+            width={this.state.videoDimX1 * this.state.videoWidth * 1.25}
             url={this.theme3Video}
             controls={true}
-            onPlay={() =>
-              this.setState({
-                videoDimX3: 1.25,
-                videoZindex3: 10
-              })
-            }
+            onPlay={this.vidDimPlay}
             onPause={() =>
               this.setState({
-                videoDimX3: 1,
-                videoZindex3: 1
+                videoDimX1: 1,
+                videoZindex1: 1
               })
             }
           />
