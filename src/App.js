@@ -513,7 +513,7 @@ class Application extends React.Component {
     }
     if (this.state.aboutState == true) {
       this.setState({
-        themeVidRight: window.innerWidth/3,
+        aboutWidth: window.innerWidth/2,
         themeWidth: 0.375,
         themeDescWidth: "100%",
         themeDescBottom: 50,
