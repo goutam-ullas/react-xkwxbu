@@ -82,7 +82,7 @@ class Application extends React.Component {
       themeDescWidth: "40%",
       themeDescBottom: 250,
       themeVidLeft: 50,
-      themeVidRight: 300,
+      themeVidRight: 700,
       page1Vis: "visible",
       page2Vis: "hidden",
       page3Vis: "hidden",
@@ -518,7 +518,7 @@ class Application extends React.Component {
         themeDescWidth: "100%",
         themeDescBottom: 50,
         themeVidLeft: 50,
-        themeVidRight: 800,
+        themeVidRight: 100,
         videoDimX1: 1
       });
     } else {
@@ -528,7 +528,7 @@ class Application extends React.Component {
         themeDescWidth: "40%",
         themeDescBottom: 250,
         themeVidLeft: 50,
-        themeVidRight: 300,
+        themeVidRight: 700,
       });
     }
   }
@@ -553,7 +553,7 @@ class Application extends React.Component {
         themeDescWidth: "40%",
         themeDescBottom: 250,
         themeVidLeft: 50,
-        themeVidRight: 300
+        themeVidRight: 700
       });
     }
     if (this.state.researchState == false) {
@@ -564,7 +564,7 @@ class Application extends React.Component {
         themeDescWidth: "40%",
         themeDescBottom: 250,
         themeVidLeft: 50,
-        themeVidRight: 300
+        themeVidRight: 700
       });
     }
     if (this.state.legendState == true) {
@@ -601,7 +601,7 @@ class Application extends React.Component {
         themeDescWidth: "100%",
         themeDescBottom: 50,
         themeVidLeft: 50,
-        themeVidRight: 800,
+        themeVidRight: 100,
         videoDimX1: 1
       });
     } else {
@@ -612,7 +612,7 @@ class Application extends React.Component {
         themeDescWidth: "40%",
         themeDescBottom: 250,
         themeVidLeft: 50,
-        themeVidRight: 300,
+        themeVidRight: 700,
       });
     }
   }
@@ -968,8 +968,8 @@ class Application extends React.Component {
               zIndex: 5,
               width: "40%",
               bottom: this.state.mapHeight / 8,
-              left: 50,
-              transition: "width 1s, bottom 1s"
+              left: this.state.themeVidRight,
+              transition: "width 1s, bottom 1s, left 1s"
             }}
           >
             <text className="themeDesc">{this.theme2Desc}</text>
@@ -980,10 +980,10 @@ class Application extends React.Component {
             style={{
               bottom: this.state.mapHeight / 4,
               zIndex: this.state.videoZindex2,
-              right: this.state.themeVidRight,
-              transition: "right 1s"
+              left: this.state.themeVidRight-10,
+              transition: "left 1s"
             }}
-            height={this.state.videoDimX2 * this.state.videoHeight * 1.25}
+            height={this.state.videoHeight * 1.25}
             width={this.state.videoDimX2 * this.state.videoWidth * 1.25}
             url={this.theme2Video}
             controls={true}
