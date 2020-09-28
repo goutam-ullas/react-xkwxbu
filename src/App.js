@@ -80,6 +80,7 @@ class Application extends React.Component {
       scaleDistance: 13,
       themeWidth: 0.75,
       themeDescWidth: "40%",
+      theme3DescWidth: "60%",
       themeDescBottom: 250,
       themeVidLeft: 50,
       themeVidRight: window.innerWidth/3,
@@ -518,6 +519,7 @@ class Application extends React.Component {
         aboutWidth: window.innerWidth/2,
         themeWidth: 0.375,
         themeDescWidth: "100%",
+        theme3DescWidth: "100%",
         themeDescBottom: 50,
         themeVidLeft: 50,
         themeVidRight: window.innerWidth/21,
@@ -530,6 +532,7 @@ class Application extends React.Component {
         aboutWidth: 0,
         themeWidth: 0.75,
         themeDescWidth: "40%",
+        theme3DescWidth: "60%",
         themeDescBottom: 250,
         themeVidLeft: 50,
         theme3DescTop: window.innerHeight/3, 
@@ -557,6 +560,7 @@ class Application extends React.Component {
         aboutState: true,
         themeWidth: 0.75,
         themeDescWidth: "40%",
+        theme3DescWidth: "60%",
         themeDescBottom: 250,
         themeVidLeft: 50,
         themeVidRight: window.innerWidth/21,
@@ -571,6 +575,7 @@ class Application extends React.Component {
         researchState: true,
         themeWidth: 0.75,
         themeDescWidth: "40%",
+        theme3DescWidth: "60%",
         themeDescBottom: 250,
         themeVidLeft: 50,
         theme3DescTop: window.innerHeight/3, 
@@ -610,6 +615,7 @@ class Application extends React.Component {
         researchBorder: 50,
         themeWidth: 0.375,
         themeDescWidth: "100%",
+        theme3DescWidth: "100%",
         themeDescBottom: 50,
         themeVidLeft: 50,
         theme3DescTop: 0.6*window.innerHeight, 
@@ -623,6 +629,7 @@ class Application extends React.Component {
         researchBorder: 0,
         themeWidth: 0.75,
         themeDescWidth: "40%",
+        theme3DescWidth: "60%",
         themeDescBottom: 250,
         themeVidLeft: 50,
         theme3DescTop: window.innerHeight/3,
@@ -1024,7 +1031,7 @@ class Application extends React.Component {
               padding: 20,
               position: "absolute",
               zIndex: 5,
-              width: this.state.themeDescWidth,
+              width: this.state.theme3DescWidth,
               top: 0.9*this.state.theme3DescTop,
               right: 20,
               transition: "width 1s, top 1s"
@@ -1053,8 +1060,8 @@ class Application extends React.Component {
               left: this.state.themeVidLeft,
               transition: "top 1s"
             }}
-            height={this.state.videoDimX1 * this.state.videoHeight * 1.25}
-            width={this.state.videoDimX1 * this.state.videoWidth * 1.25}
+            height={this.state.videoDimX1 * this.state.videoHeight}
+            width={this.state.videoDimX1 * this.state.videoWidth}
             url={this.theme3Video}
             controls={true}
             onPlay={this.vidDimPlay}
