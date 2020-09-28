@@ -900,7 +900,7 @@ class Application extends React.Component {
             style={{
               bottom: this.state.themeGap / 4,
               zIndex: this.state.videoZindex1,
-              left: 0.8*this.state.themeVidLeft
+              left: 0.7*this.state.themeVidLeft
             }}
             height={this.state.videoHeight * 1.25}
             width={this.state.videoWidth * 1.25}
