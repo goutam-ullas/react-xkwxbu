@@ -947,7 +947,7 @@ class Application extends React.Component {
               position: "fixed",
               zIndex: 5,
               width: "40%",
-              bottom: this.state.mapHeight / 8,
+              bottom: this.state.mapHeight / 10,
               left: this.state.themeVidRight,
               transition: "width 1s, bottom 1s, left 1s"
             }}
@@ -960,7 +960,7 @@ class Application extends React.Component {
             style={{
               bottom: this.state.mapHeight / 4,
               zIndex: this.state.videoZindex2,
-              left: this.state.themeVidRight-10,
+              left: this.state.themeVidRight-20,
               transition: "left 1s"
             }}
             height={this.state.videoHeight * 1.25}
