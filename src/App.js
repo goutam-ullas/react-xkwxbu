@@ -902,14 +902,13 @@ class Application extends React.Component {
               zIndex: this.state.videoZindex1,
               left: this.state.themeVidLeft
             }}
-            height={this.state.videoDimX1 * this.state.videoHeight * 1.25}
-            width={this.state.videoDimX1 * this.state.videoWidth * 1.25}
+            height={this.state.videoHeight * 1.25}
+            width={this.state.videoWidth * 1.25}
             url={this.theme1Video}
             controls={true}
             onPlay={this.vidDimPlay}
             onPause={() =>
               this.setState({
-                videoDimX1: 1,
                 videoZindex1: 1
               })
             }
@@ -965,7 +964,7 @@ class Application extends React.Component {
               transition: "left 1s"
             }}
             height={this.state.videoHeight * 1.25}
-            width={this.state.videoDimX2 * this.state.videoWidth * 1.25}
+            width={this.state.videoWidth * 1.25}
             url={this.theme2Video}
             controls={true}
           />
@@ -1019,14 +1018,13 @@ class Application extends React.Component {
               left: this.state.themeVidLeft,
               transition: "top 1s"
             }}
-            height={this.state.videoDimX1 * this.state.videoHeight}
-            width={this.state.videoDimX1 * this.state.videoWidth}
+            height={this.state.videoHeight}
+            width={this.state.videoWidth}
             url={this.theme3Video}
             controls={true}
             onPlay={this.vidDimPlay}
             onPause={() =>
               this.setState({
-                videoDimX1: 1,
                 videoZindex1: 1
               })
             }
@@ -1067,19 +1065,17 @@ class Application extends React.Component {
               zIndex: this.state.videoZindex4,
               left: this.state.themeVidLeft
             }}
-            height={this.state.videoDimX4 * this.state.videoHeight}
-            width={this.state.videoDimX4 * this.state.videoWidth}
+            height={this.state.videoHeight}
+            width={this.state.videoWidth}
             url={this.theme4Video}
             controls={true}
             onPlay={() =>
               this.setState({
-                videoDimX4: 1.25,
                 videoZindex4: 10
               })
             }
             onPause={() =>
               this.setState({
-                videoDimX4: 1,
                 videoZindex4: 1
               })
             }
