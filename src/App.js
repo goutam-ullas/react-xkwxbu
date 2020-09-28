@@ -978,7 +978,7 @@ class Application extends React.Component {
           <ReactPlayer
             className="video"
             style={{
-              bottom: this.state.themeGap / 8,
+              bottom: this.state.themeGap / 4,
               zIndex: this.state.videoZindex2,
               right: this.state.themeVidRight,
               transition: "right 1s"
