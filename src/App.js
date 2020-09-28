@@ -962,11 +962,11 @@ class Application extends React.Component {
           <div
             style={{
               padding: 20,
-              position: "absolute",
+              position: "fixed",
               zIndex: 5,
-              width: this.state.themeDescWidth,
-              bottom: this.state.themeDescBottom,
-              left: this.state.themeVidLeft,
+              width: "40%",
+              top: 200,
+              left: 50,
               transition: "width 1s, bottom 1s"
             }}
           >
