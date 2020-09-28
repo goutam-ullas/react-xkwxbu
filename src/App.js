@@ -98,8 +98,8 @@ class Application extends React.Component {
       page1Play: true,
       volumeIcon: faVolumeOff,
       page1mute: true,
-      theme3DescTop: window.innerHeight/3,
-      theme3VidTop: window.innerHeight/3
+      theme3DescTop: window.innerHeight/4,
+      theme3VidTop: window.innerHeight/4
     };
     /*Bind Functions*/
     this.researchRef = React.createRef();
@@ -538,8 +538,8 @@ class Application extends React.Component {
         themeDescBottom: 250,
         themeVidLeft: 50,
         theme3DescLeft: 500,
-        theme3DescTop: window.innerHeight/3, 
-        theme3VidTop: window.innerHeight/3,
+        theme3DescTop: window.innerHeight/4, 
+        theme3VidTop: window.innerHeight/4,
         themeVidRight: window.innerWidth/3
       });
     }
@@ -568,8 +568,8 @@ class Application extends React.Component {
         themeVidLeft: 50,
         theme3DescLeft: 500,
         themeVidRight: window.innerWidth/21,
-        theme3VidTop: window.innerHeight/3,   
-        theme3DescTop: window.innerHeight/3,      
+        theme3VidTop: window.innerHeight/4,   
+        theme3DescTop: window.innerHeight/4,      
         themeVidRight: window.innerWidth/3
       });
     }
@@ -583,8 +583,8 @@ class Application extends React.Component {
         themeDescBottom: 250,
         themeVidLeft: 50,
         theme3DescLeft: 500,
-        theme3DescTop: window.innerHeight/3, 
-        theme3VidTop: window.innerHeight/3,        
+        theme3DescTop: window.innerHeight/4, 
+        theme3VidTop: window.innerHeight/4,        
         themeVidRight: window.innerWidth/3
       });
     }
@@ -639,8 +639,8 @@ class Application extends React.Component {
         themeDescBottom: 250,
         themeVidLeft: 50,
         theme3DescLeft: 500,
-        theme3DescTop: window.innerHeight/3,
-        theme3VidTop: window.innerHeight/3,
+        theme3DescTop: window.innerHeight/4,
+        theme3VidTop: window.innerHeight/4,
         themeVidRight: window.innerWidth/3
       });
     }
