@@ -151,7 +151,7 @@ class Application extends React.Component {
   theme8Video = "https://vimeo.com/448630300/810e46cfce";
 
   /* Image URLs */
-  theme2Img = "https://i.imgur.com/2UguyBZ.jpg";
+  theme2Img = "https://i.imgur.com/wEB95i9.png";
 
   /* Legend colors */
   godsColor = "#79859a";
