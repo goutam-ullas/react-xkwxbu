@@ -967,7 +967,7 @@ class Application extends React.Component {
               position: "fixed",
               zIndex: 5,
               width: "40%",
-              bottom: this.state.mapHeight / 6,
+              bottom: this.state.mapHeight / 8,
               left: 50,
               transition: "width 1s, bottom 1s"
             }}
