@@ -90,11 +90,6 @@ class Application extends React.Component {
       page3Vis: "hidden",
       page4Vis: "hidden",
       page5Vis: "hidden",
-      page6Vis: "hidden",
-      page7Vis: "hidden",
-      page8Vis: "hidden",
-      page9Vis: "hidden",
-      page10Vis: "hidden",
       page1Play: true,
       volumeIcon: faVolumeOff,
       page1mute: true,
@@ -169,7 +164,7 @@ class Application extends React.Component {
   barsColor = "#57858e";
   /* Theme Position Variables*/
   circleState = 0;
-  maxThemes = 8;
+  maxThemes = 4;
   triangleState = false;
   /*On Mount*/
   componentDidMount() {
@@ -663,7 +658,7 @@ class Application extends React.Component {
     if (this.circleState == 0) {
       this.setState({
         page1Vis: "visible",
-        page9Vis: "hidden",
+        page5Vis: "hidden",
         page1Play: true
       });
     }
@@ -682,18 +677,6 @@ class Application extends React.Component {
     }
     if (this.circleState == 4) {
       this.setState({ page5Vis: "visible", page4Vis: "hidden" });
-    }
-    if (this.circleState == 5) {
-      this.setState({ page6Vis: "visible", page5Vis: "hidden" });
-    }
-    if (this.circleState == 6) {
-      this.setState({ page7Vis: "visible", page6Vis: "hidden" });
-    }
-    if (this.circleState == 7) {
-      this.setState({ page8Vis: "visible", page7Vis: "hidden" });
-    }
-    if (this.circleState == 8) {
-      this.setState({ page9Vis: "visible", page8Vis: "hidden" });
     }
   }
   /*When clicked on Prev button*/
@@ -731,25 +714,12 @@ class Application extends React.Component {
       this.setState({ page4Vis: "visible", page5Vis: "hidden" });
     }
     if (this.circleState == 4) {
-      this.setState({ page5Vis: "visible", page6Vis: "hidden" });
-    }
-    if (this.circleState == 5) {
-      this.setState({ page6Vis: "visible", page7Vis: "hidden" });
-    }
-    if (this.circleState == 6) {
-      this.setState({ page7Vis: "visible", page8Vis: "hidden" });
-    }
-    if (this.circleState == 7) {
-      this.setState({ page8Vis: "visible", page9Vis: "hidden" });
-    }
-    if (this.circleState == 8) {
       this.setState({
-        page9Vis: "visible",
+        page5Vis: "visible",
         page1Vis: "hidden",
         page1Play: false
       });
     }
-    console.log(this.circleState);
   }
 
   /*When clicked on Next button*/
@@ -768,10 +738,6 @@ class Application extends React.Component {
         page3Vis: "hidden",
         page4Vis: "hidden",
         page5Vis: "hidden",
-        page6Vis: "hidden",
-        page7Vis: "hidden",
-        page8Vis: "hidden",
-        page9Vis: "hidden",
         page1Play: false
       });
     } else {
@@ -794,20 +760,6 @@ class Application extends React.Component {
       }
       if (this.circleState == 4) {
         this.setState({ page5Vis: "visible" });
-      }
-      if (this.circleState == 5) {
-        this.setState({ page6Vis: "visible" });
-      }
-      if (this.circleState == 6) {
-        this.setState({ page7Vis: "visible" });
-      }
-      if (this.circleState == 7) {
-        this.setState({ page8Vis: "visible" });
-      }
-      if (this.circleState == 8) {
-        this.setState({
-          page9Vis: "visible"
-        });
       }
     }
     this.triangleState = !this.triangleState;
@@ -1107,7 +1059,82 @@ class Application extends React.Component {
           >
             <text className="themeDesc">{this.theme2Desc}</text>
           </div>
-          {/*Theme 4 Video*/}
+          {/*Theme 4 Video 1*/}
+          <ReactPlayer
+            className="video"
+            style={{
+              top: this.state.themeGap / 3,
+              zIndex: this.state.videoZindex4,
+              left: this.state.themeVidLeft
+            }}
+            height={this.state.videoDimX4 * this.state.videoHeight}
+            width={this.state.videoDimX4 * this.state.videoWidth}
+            url={this.theme4Video}
+            controls={true}
+            onPlay={() =>
+              this.setState({
+                videoDimX4: 1.25,
+                videoZindex4: 10
+              })
+            }
+            onPause={() =>
+              this.setState({
+                videoDimX4: 1,
+                videoZindex4: 1
+              })
+            }
+          />
+          {/*Theme 4 Video 2*/}
+          <ReactPlayer
+            className="video"
+            style={{
+              top: this.state.themeGap / 3,
+              zIndex: this.state.videoZindex4,
+              left: this.state.themeVidLeft
+            }}
+            height={this.state.videoDimX4 * this.state.videoHeight}
+            width={this.state.videoDimX4 * this.state.videoWidth}
+            url={this.theme4Video}
+            controls={true}
+            onPlay={() =>
+              this.setState({
+                videoDimX4: 1.25,
+                videoZindex4: 10
+              })
+            }
+            onPause={() =>
+              this.setState({
+                videoDimX4: 1,
+                videoZindex4: 1
+              })
+            }
+          />
+          {/*Theme 4 Video 3*/}
+          <ReactPlayer
+            className="video"
+            style={{
+              top: this.state.themeGap / 3,
+              zIndex: this.state.videoZindex4,
+              left: this.state.themeVidLeft
+            }}
+            height={this.state.videoDimX4 * this.state.videoHeight}
+            width={this.state.videoDimX4 * this.state.videoWidth}
+            url={this.theme4Video}
+            controls={true}
+            onPlay={() =>
+              this.setState({
+                videoDimX4: 1.25,
+                videoZindex4: 10
+              })
+            }
+            onPause={() =>
+              this.setState({
+                videoDimX4: 1,
+                videoZindex4: 1
+              })
+            }
+          />
+          {/*Theme 4 Video 4*/}
           <ReactPlayer
             className="video"
             style={{
@@ -1133,230 +1160,6 @@ class Application extends React.Component {
             }
           />
         </div>
-
-        {/*Page 6: Theme 5*/}
-        <div
-          style={{
-            position: "fixed",
-            pointerEvents: "none",
-            top: 0,
-            height: window.innerHeight,
-            left: (window.innerWidth * this.state.themeWidth) / 6,
-            width: this.state.themeWidth * window.innerWidth,
-            transition: "width 1s, left 1s",
-            visibility: this.state.page6Vis
-          }}
-        >
-          {/*Theme 5 Description*/}
-          <div
-            style={{
-              padding: 20,
-              position: "absolute",
-              zIndex: 5,
-              width: this.state.themeDescWidth,
-              bottom: this.state.themeDescBottom,
-              transition: "width 1s, bottom 1s"
-            }}
-          >
-            <text className="themeDesc">
-              {this.theme5Desc1}
-              <br />
-              <br />
-              {this.theme5Desc2}
-              <br />
-              <br />
-              {this.theme5Desc3}
-              <br />
-              <br />
-              {this.theme5Desc4}
-            </text>
-          </div>
-          {/*Theme 5 Video*/}
-          <ReactPlayer
-            className="video"
-            style={{
-              top: this.state.themeGap / 3,
-              zIndex: this.state.videoZindex5,
-              left: this.state.themeVidLeft
-            }}
-            height={this.state.videoDimX5 * this.state.videoHeight}
-            width={this.state.videoDimX5 * this.state.videoWidth}
-            url={this.theme5Video}
-            controls={true}
-            onPlay={() =>
-              this.setState({
-                videoDimX5: 1.25,
-                videoZindex5: 10
-              })
-            }
-            onPause={() =>
-              this.setState({
-                videoDimX5: 1,
-                videoZindex5: 1
-              })
-            }
-          />
-        </div>
-
-        {/*Page 7: Theme 6*/}
-        <div
-          style={{
-            position: "fixed",
-            pointerEvents: "none",
-            top: 0,
-            height: window.innerHeight,
-            left: (window.innerWidth * this.state.themeWidth) / 6,
-            width: this.state.themeWidth * window.innerWidth,
-            transition: "width 1s, left 1s",
-            visibility: this.state.page7Vis
-          }}
-        >
-          {/*Theme 6 Description*/}
-          <div
-            style={{
-              padding: 20,
-              position: "absolute",
-              zIndex: 5,
-              width: this.state.themeDescWidth,
-              bottom: this.state.themeDescBottom,
-              transition: "width 1s, bottom 1s"
-            }}
-          >
-            <text className="themeDesc">{this.theme2Desc}</text>
-          </div>
-          {/*Theme 6 Video*/}
-          <ReactPlayer
-            className="video"
-            style={{
-              top: this.state.themeGap / 3,
-              zIndex: this.state.videoZindex6,
-              left: this.state.themeVidLeft
-            }}
-            height={this.state.videoDimX6 * this.state.videoHeight}
-            width={this.state.videoDimX6 * this.state.videoWidth}
-            url={this.theme6Video}
-            controls={true}
-            onPlay={() =>
-              this.setState({
-                videoDimX6: 1.25,
-                videoZindex6: 10
-              })
-            }
-            onPause={() =>
-              this.setState({
-                videoDimX6: 1,
-                videoZindex6: 1
-              })
-            }
-          />
-        </div>
-
-        {/*Page 8: Theme 7*/}
-        <div
-          style={{
-            position: "fixed",
-            pointerEvents: "none",
-            top: 0,
-            height: window.innerHeight,
-            left: (window.innerWidth * this.state.themeWidth) / 6,
-            width: this.state.themeWidth * window.innerWidth,
-            transition: "width 1s, left 1s",
-            visibility: this.state.page8Vis
-          }}
-        >
-          {/*Theme 7 Description*/}
-          <div
-            style={{
-              padding: 20,
-              position: "absolute",
-              zIndex: 5,
-              width: this.state.themeDescWidth,
-              bottom: this.state.themeDescBottom,
-              transition: "width 1s, bottom 1s"
-            }}
-          >
-            <text className="themeDesc">{this.theme2Desc}</text>
-          </div>
-          {/*Theme 7 Video*/}
-          <ReactPlayer
-            className="video"
-            style={{
-              top: this.state.themeGap / 3,
-              zIndex: this.state.videoZindex7,
-              left: this.state.themeVidLeft
-            }}
-            height={this.state.videoDimX7 * this.state.videoHeight}
-            width={this.state.videoDimX7 * this.state.videoWidth}
-            url={this.theme7Video}
-            controls={true}
-            onPlay={() =>
-              this.setState({
-                videoDimX7: 1.25,
-                videoZindex7: 10
-              })
-            }
-            onPause={() =>
-              this.setState({
-                videoDimX7: 1,
-                videoZindex7: 1
-              })
-            }
-          />
-        </div>
-
-        {/*Page 9: Theme 8*/}
-        <div
-          style={{
-            position: "fixed",
-            pointerEvents: "none",
-            top: 0,
-            height: window.innerHeight,
-            left: (window.innerWidth * this.state.themeWidth) / 6,
-            width: this.state.themeWidth * window.innerWidth,
-            transition: "width 1s, left 1s",
-            visibility: this.state.page9Vis
-          }}
-        >
-          {/*Theme 8 Description*/}
-          <div
-            style={{
-              padding: 20,
-              position: "absolute",
-              zIndex: 5,
-              width: this.state.themeDescWidth,
-              bottom: this.state.themeDescBottom,
-              transition: "width 1s, bottom 1s"
-            }}
-          >
-            <text className="themeDesc">{this.theme2Desc}</text>
-          </div>
-          {/*Theme 8 Video*/}
-          <ReactPlayer
-            className="video"
-            style={{
-              top: this.state.themeGap / 3,
-              zIndex: this.state.videoZindex8,
-              left: this.state.themeVidLeft
-            }}
-            height={this.state.videoDimX8 * this.state.videoHeight}
-            width={this.state.videoDimX8 * this.state.videoWidth}
-            url={this.theme8Video}
-            controls={true}
-            onPlay={() =>
-              this.setState({
-                videoDimX8: 1.25,
-                videoZindex8: 10
-              })
-            }
-            onPause={() =>
-              this.setState({
-                videoDimX8: 1,
-                videoZindex8: 1
-              })
-            }
-          />
-        </div>
-
         {/*Title Bar*/}
         <div className="titlebar" style={{ top: -10, width: 600, zIndex: 10 }}>
           <Typekit kitId="bor7jxc" />
