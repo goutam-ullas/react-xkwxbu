@@ -1018,8 +1018,8 @@ class Application extends React.Component {
               left: this.state.themeVidLeft,
               transition: "top 1s"
             }}
-            height={this.state.videoHeight}
-            width={this.state.videoWidth}
+            height={this.state.videoHeight*1.25}
+            width={this.state.videoWidth*1.25}
             url={this.theme3Video}
             controls={true}
             onPlay={this.vidDimPlay}
