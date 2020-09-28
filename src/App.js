@@ -518,7 +518,7 @@ class Application extends React.Component {
         themeDescWidth: "100%",
         themeDescBottom: 50,
         themeVidLeft: 50,
-        themeVidRight: window.innerWidth/18,
+        themeVidRight: window.innerWidth/21,
         videoDimX1: 1
       });
     } else {
@@ -553,7 +553,7 @@ class Application extends React.Component {
         themeDescWidth: "40%",
         themeDescBottom: 250,
         themeVidLeft: 50,
-        themeVidRight: window.innerWidth/18
+        themeVidRight: window.innerWidth/21
       });
     }
     if (this.state.researchState == false) {
@@ -601,7 +601,7 @@ class Application extends React.Component {
         themeDescWidth: "100%",
         themeDescBottom: 50,
         themeVidLeft: 50,
-        themeVidRight: window.innerWidth/18,
+        themeVidRight: window.innerWidth/21,
         videoDimX1: 1
       });
     } else {
