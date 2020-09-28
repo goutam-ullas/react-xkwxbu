@@ -900,7 +900,7 @@ class Application extends React.Component {
           }}
         />
 
-        {/* Page 2: Theme 1*/}
+        {/* Page 3: Theme 1*/}
         <div
           style={{
             position: "fixed",
@@ -910,7 +910,7 @@ class Application extends React.Component {
             left: (window.innerWidth * this.state.themeWidth) / 6,
             width: this.state.themeWidth * window.innerWidth,
             transition: "width 1s, left 1s",
-            visibility: this.state.page2Vis
+            visibility: this.state.page3Vis
           }}
         >
           {/*Theme 1 Description*/}
@@ -950,7 +950,7 @@ class Application extends React.Component {
           />
         </div>
 
-        {/*Page 3: Theme 2*/}
+        {/*Page 2: Theme 2*/}
         <div
           style={{
             position: "fixed",
@@ -960,7 +960,7 @@ class Application extends React.Component {
             left: (window.innerWidth * this.state.themeWidth) / 6,
             width: this.state.themeWidth * window.innerWidth,
             transition: "width 1s, left 1s",
-            visibility: this.state.page3Vis,
+            visibility: this.state.page2Vis,
             backgroundColor: "transparent"
           }}
         >
