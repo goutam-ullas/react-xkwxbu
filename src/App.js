@@ -910,7 +910,7 @@ class Application extends React.Component {
             className="video"
             ref={el => (this.video1Ref = el)}
             style={{
-              bottom: this.state.themeGap / 3,
+              bottom: this.state.themeGap / 4,
               zIndex: this.state.videoZindex1,
               left: this.state.themeVidLeft
             }}
@@ -1023,7 +1023,7 @@ class Application extends React.Component {
             className="video"
             ref={el => (this.video1Ref = el)}
             style={{
-              bottom: this.state.themeGap / 3,
+              bottom: this.state.themeGap / 4,
               zIndex: this.state.videoZindex1,
               left: this.state.themeVidLeft
             }}
