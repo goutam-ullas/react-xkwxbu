@@ -82,6 +82,7 @@ class Application extends React.Component {
       themeDescWidth: "40%",
       themeDescBottom: 250,
       themeVidLeft: 50,
+      themeVidRight: 300,
       page1Vis: "visible",
       page2Vis: "hidden",
       page3Vis: "hidden",
@@ -517,6 +518,7 @@ class Application extends React.Component {
         themeDescWidth: "100%",
         themeDescBottom: 50,
         themeVidLeft: 50,
+        themeVidRight: 800,
         videoDimX1: 1
       });
     } else {
@@ -525,7 +527,8 @@ class Application extends React.Component {
         themeWidth: 0.75,
         themeDescWidth: "40%",
         themeDescBottom: 250,
-        themeVidLeft: 50
+        themeVidLeft: 50,
+        themeVidRight: 300,
       });
     }
   }
@@ -596,6 +599,7 @@ class Application extends React.Component {
         themeDescWidth: "100%",
         themeDescBottom: 50,
         themeVidLeft: 50,
+        themeVidRight: 800,
         videoDimX1: 1
       });
     } else {
@@ -605,7 +609,8 @@ class Application extends React.Component {
         themeWidth: 0.75,
         themeDescWidth: "40%",
         themeDescBottom: 250,
-        themeVidLeft: 50
+        themeVidLeft: 50,
+        themeVidRight: 300,
       });
     }
   }
@@ -971,9 +976,10 @@ class Application extends React.Component {
           <ReactPlayer
             className="video"
             style={{
-              top: this.state.themeGap / 3,
+              bottom: this.state.themeGap / 8,
               zIndex: this.state.videoZindex2,
-              right: 100
+              right: this.state.themeVidRight,
+              transition: "right 1s"
             }}
             height={this.state.videoDimX2 * this.state.videoHeight * 1.25}
             width={this.state.videoDimX2 * this.state.videoWidth * 1.25}
