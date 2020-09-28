@@ -80,7 +80,7 @@ class Application extends React.Component {
       scaleDistance: 13,
       themeWidth: 0.75,
       themeDescWidth: "40%",
-      theme3DescWidth: "60%",
+      theme3DescWidth: "40%",
       themeDescBottom: 250,
       themeVidLeft: 50,
       theme3DescLeft: 500,
