@@ -1040,7 +1040,7 @@ class Application extends React.Component {
               zIndex: 5,
               width: this.state.theme3DescWidth,
               top: 0.9*this.state.theme3DescTop,
-              left: theme3DescLeft,
+              left: this.theme3DescLeft,
               transition: "width 1s, top 1s"
             }}
           >
