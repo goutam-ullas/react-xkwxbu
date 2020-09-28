@@ -945,6 +945,7 @@ class Application extends React.Component {
           <img
             style={{
               position: "fixed",
+              backgroundColor: "transparent",
               top: 0,
               right: 0,
               height: this.state.mapHeight
