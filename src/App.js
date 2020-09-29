@@ -78,13 +78,10 @@ class Application extends React.Component {
       popUpPad: 0,
       popUpColor: "",
       scaleDistance: 13,
-      themeWidth: 0.75,
       themeDescWidth: "40%",
-      theme3DescWidth: "40%",
       themeDescBottom: 250,
       themeVidLeft: 50,
-      theme3DescLeft: 500,
-      theme1DescLeft: 500,
+      themeDescLeft: 500,
       themeVidRight: 0.29*window.innerWidth,
       page1Vis: "visible",
       page2Vis: "hidden",
@@ -514,13 +511,9 @@ class Application extends React.Component {
     if (this.state.aboutState == true) {
       this.setState({
         aboutWidth: window.innerWidth/2,
-        themeWidth: 0.375,
-        themeDescWidth: "100%",
-        theme3DescWidth: "120%",
         themeDescBottom: 50,
         themeVidLeft: 50,
-        theme3DescLeft: -50,
-        theme1DescLeft: -35,
+        themeDescLeft: -50,
         themeVidRight: window.innerWidth/21,
         theme3DescTop: 0.6*window.innerHeight, 
         theme3VidTop: window.innerHeight/8,
@@ -529,13 +522,9 @@ class Application extends React.Component {
     } else {
       this.setState({
         aboutWidth: 0,
-        themeWidth: 0.75,
-        themeDescWidth: "40%",
-        theme3DescWidth: "40%",
         themeDescBottom: 250,
         themeVidLeft: 50,
-        theme3DescLeft: 500,
-        theme1DescLeft: 500,
+        themeDescLeft: 500,
         theme3DescTop: window.innerHeight/4, 
         theme3VidTop: window.innerHeight/4,
         themeVidRight: 0.29*window.innerWidth
@@ -559,13 +548,9 @@ class Application extends React.Component {
       this.setState({
         aboutWidth: 0,
         aboutState: true,
-        themeWidth: 0.75,
-        themeDescWidth: "40%",
-        theme3DescWidth: "40%",
         themeDescBottom: 250,
         themeVidLeft: 50,
-        theme3DescLeft: 500,
-        theme1DescLeft: 500,
+        themeDescLeft: 500,
         themeVidRight: window.innerWidth/21,
         theme3VidTop: window.innerHeight/4,   
         theme3DescTop: window.innerHeight/4,      
@@ -576,13 +561,9 @@ class Application extends React.Component {
       this.setState({
         researchWidth: 0,
         researchState: true,
-        themeWidth: 0.75,
-        themeDescWidth: "40%",
-        theme3DescWidth: "40%",
         themeDescBottom: 250,
         themeVidLeft: 50,
-        theme3DescLeft: 500,
-        theme1DescLeft: 500,
+        themeDescLeft: 500,
         theme3DescTop: window.innerHeight/4, 
         theme3VidTop: window.innerHeight/4,        
         themeVidRight: 0.29*window.innerWidth
@@ -618,13 +599,9 @@ class Application extends React.Component {
       this.setState({
         researchWidth: window.innerWidth / 2,
         researchBorder: 50,
-        themeWidth: 0.375,
-        themeDescWidth: "100%",
-        theme3DescWidth: "120%",
         themeDescBottom: 50,
         themeVidLeft: 50,
-        theme3DescLeft: -50,
-        theme1DescLeft: -35,
+        themeDescLeft: -50,
         theme3DescTop: 0.6*window.innerHeight, 
         theme3VidTop: window.innerHeight/8,
         themeVidRight: window.innerWidth/21,
@@ -634,13 +611,9 @@ class Application extends React.Component {
       this.setState({
         researchWidth: 0,
         researchBorder: 0,
-        themeWidth: 0.75,
-        themeDescWidth: "40%",
-        theme3DescWidth: "40%",
         themeDescBottom: 250,
         themeVidLeft: 50,
-        theme3DescLeft: 500,
-        theme1DescLeft: 500,
+        themeDescLeft: 500,
         theme3DescTop: window.innerHeight/4,
         theme3VidTop: window.innerHeight/4,
         themeVidRight: 0.29*window.innerWidth
@@ -879,10 +852,9 @@ class Application extends React.Component {
             position: "fixed",
             pointerEvents: "none",
             top: 0,
+            left: 0,            
             height: window.innerHeight,
-            left: (window.innerWidth * this.state.themeWidth) / 6,
-            width: this.state.themeWidth * window.innerWidth,
-            transition: "width 1s, left 1s",
+            width: window.innerWidth,
             visibility: this.state.page3Vis
           }}
         >
@@ -894,7 +866,7 @@ class Application extends React.Component {
               zIndex: 5,
               width: this.state.themeDescWidth,
               bottom: this.state.themeDescBottom,
-              left: this.state.theme1DescLeft,
+              left: this.state.themeDescLeft,
               transition: "width 1s, bottom 1s, left 1s"
             }}
           >
@@ -928,10 +900,9 @@ class Application extends React.Component {
             position: "fixed",
             pointerEvents: "none",
             top: 0,
+            left: 0,            
             height: window.innerHeight,
-            left: (window.innerWidth * this.state.themeWidth) / 6,
-            width: this.state.themeWidth * window.innerWidth,
-            transition: "width 1s, left 1s",
+            width: window.innerWidth,
             visibility: this.state.page2Vis,
             backgroundColor: "transparent"
           }}
@@ -983,10 +954,9 @@ class Application extends React.Component {
             position: "fixed",
             pointerEvents: "none",
             top: 0,
+            left: 0,            
             height: window.innerHeight,
-            left: (window.innerWidth * this.state.themeWidth) / 6,
-            width: this.state.themeWidth * window.innerWidth,
-            transition: "width 1s, left 1s",
+            width: window.innerWidth,
             visibility: this.state.page4Vis
           }}
         >
@@ -996,9 +966,9 @@ class Application extends React.Component {
               padding: 20,
               position: "absolute",
               zIndex: 5,
-              width: this.state.theme3DescWidth,
+              width: this.state.themeDescWidth,
               top: 0.9*this.state.theme3DescTop,
-              left: this.state.theme3DescLeft,
+              left: this.state.themeDescLeft,
               transition: "width 1s, top 1s, left 1s"
             }}
           >
@@ -1044,10 +1014,9 @@ class Application extends React.Component {
             position: "fixed",
             pointerEvents: "none",
             top: 0,
+            left: 0,            
             height: window.innerHeight,
-            left: (window.innerWidth * this.state.themeWidth) / 6,
-            width: this.state.themeWidth * window.innerWidth,
-            transition: "width 1s, left 1s",
+            width: window.innerWidth,
             visibility: this.state.page5Vis
           }}
         >
