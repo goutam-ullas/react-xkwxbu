@@ -84,7 +84,7 @@ class Application extends React.Component {
       themeDescBottom: 250,
       themeVidLeft: 50,
       theme3DescLeft: 500,
-      theme1DescLeft: 1500,
+      theme1DescLeft: 500,
       themeVidRight: 0.29*window.innerWidth,
       page1Vis: "visible",
       page2Vis: "hidden",
@@ -520,7 +520,7 @@ class Application extends React.Component {
         themeDescBottom: 50,
         themeVidLeft: 50,
         theme3DescLeft: -50,
-        theme1DescLeft: -500,
+        theme1DescLeft: -50,
         themeVidRight: window.innerWidth/21,
         theme3DescTop: 0.6*window.innerHeight, 
         theme3VidTop: window.innerHeight/8,
@@ -535,7 +535,7 @@ class Application extends React.Component {
         themeDescBottom: 250,
         themeVidLeft: 50,
         theme3DescLeft: 500,
-        theme1DescLeft: 1500,
+        theme1DescLeft: 500,
         theme3DescTop: window.innerHeight/4, 
         theme3VidTop: window.innerHeight/4,
         themeVidRight: 0.29*window.innerWidth
@@ -565,7 +565,7 @@ class Application extends React.Component {
         themeDescBottom: 250,
         themeVidLeft: 50,
         theme3DescLeft: 500,
-        theme1DescLeft: 1500,
+        theme1DescLeft: 500,
         themeVidRight: window.innerWidth/21,
         theme3VidTop: window.innerHeight/4,   
         theme3DescTop: window.innerHeight/4,      
@@ -582,7 +582,7 @@ class Application extends React.Component {
         themeDescBottom: 250,
         themeVidLeft: 50,
         theme3DescLeft: 500,
-        theme1DescLeft: 1500,
+        theme1DescLeft: 500,
         theme3DescTop: window.innerHeight/4, 
         theme3VidTop: window.innerHeight/4,        
         themeVidRight: 0.29*window.innerWidth
@@ -624,7 +624,7 @@ class Application extends React.Component {
         themeDescBottom: 50,
         themeVidLeft: 50,
         theme3DescLeft: -50,
-        theme1DescLeft: -500,
+        theme1DescLeft: -50,
         theme3DescTop: 0.6*window.innerHeight, 
         theme3VidTop: window.innerHeight/8,
         themeVidRight: window.innerWidth/21,
@@ -640,7 +640,7 @@ class Application extends React.Component {
         themeDescBottom: 250,
         themeVidLeft: 50,
         theme3DescLeft: 500,
-        theme1DescLeft: 1500,
+        theme1DescLeft: 500,
         theme3DescTop: window.innerHeight/4,
         theme3VidTop: window.innerHeight/4,
         themeVidRight: 0.29*window.innerWidth
@@ -894,7 +894,7 @@ class Application extends React.Component {
               zIndex: 5,
               width: this.state.themeDescWidth,
               bottom: this.state.themeDescBottom,
-              left: this.theme1DescLeft,
+              left: this.state.theme1DescLeft,
               transition: "width 1s, bottom 1s"
             }}
           >
