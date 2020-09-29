@@ -520,7 +520,7 @@ class Application extends React.Component {
         themeDescBottom: 50,
         themeVidLeft: 50,
         theme3DescLeft: -50,
-        theme1DescLeft: -50,
+        theme1DescLeft: -30,
         themeVidRight: window.innerWidth/21,
         theme3DescTop: 0.6*window.innerHeight, 
         theme3VidTop: window.innerHeight/8,
@@ -624,7 +624,7 @@ class Application extends React.Component {
         themeDescBottom: 50,
         themeVidLeft: 50,
         theme3DescLeft: -50,
-        theme1DescLeft: -50,
+        theme1DescLeft: -30,
         theme3DescTop: 0.6*window.innerHeight, 
         theme3VidTop: window.innerHeight/8,
         themeVidRight: window.innerWidth/21,
@@ -895,7 +895,7 @@ class Application extends React.Component {
               width: this.state.themeDescWidth,
               bottom: this.state.themeDescBottom,
               left: this.state.theme1DescLeft,
-              transition: "width 1s, bottom 1s"
+              transition: "width 1s, bottom 1s, left 1s"
             }}
           >
             <text className="themeDesc">{this.theme1Desc}</text>
