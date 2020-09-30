@@ -914,6 +914,7 @@ class Application extends React.Component {
               backgroundColor: "transparent",
               top: 0,
               left: 0,
+              width: this.state.mapWidth,
               height: this.state.mapHeight
             }}
             src={this.theme2Img}
