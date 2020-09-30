@@ -777,7 +777,7 @@ class Application extends React.Component {
     const searchParams = new URLSearchParams(location.search);
     if (searchParams.get("query") == "research") {
       this.setState({
-        researchState: true,
+        researchState: false,
         researchWidth: window.innerWidth / 2
       });
     }
