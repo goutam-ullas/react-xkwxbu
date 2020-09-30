@@ -1,6 +1,13 @@
 /*imports*/
 import React, { useRef, useEffect, useState } from "react";
 import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams
+} from "react-router-dom";
+import {
   SliderInput,
   SliderTrack,
   SliderTrackHighlight,
@@ -64,8 +71,8 @@ class Application extends React.Component {
       videoZindex6: 1,
       videoZindex7: 1,
       videoZindex8: 1,
-      videoHeight: 0.4*window.innerHeight,
-      videoWidth: 0.4*window.innerWidth,
+      videoHeight: 0.4 * window.innerHeight,
+      videoWidth: 0.4 * window.innerWidth,
       imageDimX1: 0,
       imageZindex1: 1,
       popUp: false,
@@ -80,9 +87,9 @@ class Application extends React.Component {
       scaleDistance: 13,
       themeDescWidth: "40%",
       themeDescBottom: 250,
-      themeVidLeft: 0.05*window.innerWidth,
-      themeDescLeft: 0.5*window.innerWidth,
-      themeVidRight: 0.29*window.innerWidth,
+      themeVidLeft: 0.05 * window.innerWidth,
+      themeDescLeft: 0.5 * window.innerWidth,
+      themeVidRight: 0.29 * window.innerWidth,
       page1Vis: "visible",
       page2Vis: "hidden",
       page3Vis: "hidden",
@@ -91,8 +98,8 @@ class Application extends React.Component {
       page1Play: true,
       volumeIcon: faVolumeOff,
       page1mute: true,
-      theme3DescTop: window.innerHeight/4,
-      theme3VidTop: window.innerHeight/4
+      theme3DescTop: window.innerHeight / 4,
+      theme3VidTop: window.innerHeight / 4
     };
     /*Bind Functions*/
     this.researchRef = React.createRef();
@@ -116,6 +123,8 @@ class Application extends React.Component {
     this.sliderChange = this.sliderChange.bind(this);
     this.updateDimensions = this.updateDimensions.bind(this);
     this.muteFunction = this.muteFunction.bind(this);
+    this.researchURL = this.researchURL.bind(this);
+
     /*Text Variables*/
     this.aboutText =
       "Goods, Gods and Goddesses alternates performances with moments of their making. In portraying the market, Begum Bazar, and the many goods, gods and goddesses that move this space, I am looking, seeking but also escaping what I’ve been rummaging. These are individual segments, fragments of a whole, a whole I may never conceive. Because the thing is, in the telling of the various parts that will build this whole, I’m left with impressions of acts about acts, of scripted acts and scripting acts, of directing in the Bazar and being directed by the Bazar, of watching people perform with intermittent awareness of my own performance. Here, bodies become, a bride, a mother, a devotee, a woman. Stores advertise wholesale deals, actors play multiple parts, wholesale roles. It is a patch of land, but a theatre, with rehearsals, scripts and episodic memories keeping gender desirable, as imagined by some, exacted and ordered, with its outlines defined, insides determined, and borders enforced.";
@@ -429,6 +438,7 @@ class Application extends React.Component {
     });
     /*Remove PopUp when clicked on About, Research, or Legend windows*/
     window.addEventListener("mousedown", this.handleAboutResearchClick);
+    this.researchURL();
   }
 
   muteFunction() {
@@ -459,7 +469,6 @@ class Application extends React.Component {
     }
   }
 
-  
   /*Function to remove popups when clicked inside About, Research, or Legend windows*/
   handleAboutResearchClick(event) {
     if (
@@ -496,24 +505,24 @@ class Application extends React.Component {
     }
     if (this.state.aboutState == true) {
       this.setState({
-        aboutWidth: window.innerWidth/2,
+        aboutWidth: window.innerWidth / 2,
         themeDescBottom: 50,
-        themeVidLeft: 0.05*window.innerWidth,
-        themeDescLeft: 0.05*window.innerWidth,
-        themeVidRight: window.innerWidth/21,
-        theme3DescTop: 0.6*window.innerHeight, 
-        theme3VidTop: window.innerHeight/8,
+        themeVidLeft: 0.05 * window.innerWidth,
+        themeDescLeft: 0.05 * window.innerWidth,
+        themeVidRight: window.innerWidth / 21,
+        theme3DescTop: 0.6 * window.innerHeight,
+        theme3VidTop: window.innerHeight / 8,
         videoDimX1: 1
       });
     } else {
       this.setState({
         aboutWidth: 0,
         themeDescBottom: 250,
-        themeVidLeft: 0.05*window.innerWidth,
-        themeDescLeft: 0.5*window.innerWidth,
-        theme3DescTop: window.innerHeight/4, 
-        theme3VidTop: window.innerHeight/4,
-        themeVidRight: 0.29*window.innerWidth
+        themeVidLeft: 0.05 * window.innerWidth,
+        themeDescLeft: 0.5 * window.innerWidth,
+        theme3DescTop: window.innerHeight / 4,
+        theme3VidTop: window.innerHeight / 4,
+        themeVidRight: 0.29 * window.innerWidth
       });
     }
   }
@@ -535,12 +544,12 @@ class Application extends React.Component {
         aboutWidth: 0,
         aboutState: true,
         themeDescBottom: 250,
-        themeVidLeft: 0.05*window.innerWidth,
-        themeDescLeft: 0.5*window.innerWidth,
-        themeVidRight: window.innerWidth/21,
-        theme3VidTop: window.innerHeight/4,   
-        theme3DescTop: window.innerHeight/4,      
-        themeVidRight: 0.29*window.innerWidth
+        themeVidLeft: 0.05 * window.innerWidth,
+        themeDescLeft: 0.5 * window.innerWidth,
+        themeVidRight: window.innerWidth / 21,
+        theme3VidTop: window.innerHeight / 4,
+        theme3DescTop: window.innerHeight / 4,
+        themeVidRight: 0.29 * window.innerWidth
       });
     }
     if (this.state.researchState == false) {
@@ -548,11 +557,11 @@ class Application extends React.Component {
         researchWidth: 0,
         researchState: true,
         themeDescBottom: 250,
-        themeVidLeft: 0.05*window.innerWidth,
-        themeDescLeft: 0.5*window.innerWidth,
-        theme3DescTop: window.innerHeight/4, 
-        theme3VidTop: window.innerHeight/4,        
-        themeVidRight: 0.29*window.innerWidth
+        themeVidLeft: 0.05 * window.innerWidth,
+        themeDescLeft: 0.5 * window.innerWidth,
+        theme3DescTop: window.innerHeight / 4,
+        theme3VidTop: window.innerHeight / 4,
+        themeVidRight: 0.29 * window.innerWidth
       });
     }
     if (this.state.legendState == true) {
@@ -586,11 +595,11 @@ class Application extends React.Component {
         researchWidth: window.innerWidth / 2,
         researchBorder: 50,
         themeDescBottom: 50,
-        themeVidLeft: 0.05*window.innerWidth,
-        themeDescLeft: 0.05*window.innerWidth,
-        theme3DescTop: 0.6*window.innerHeight, 
-        theme3VidTop: window.innerHeight/8,
-        themeVidRight: window.innerWidth/21,
+        themeVidLeft: 0.05 * window.innerWidth,
+        themeDescLeft: 0.05 * window.innerWidth,
+        theme3DescTop: 0.6 * window.innerHeight,
+        theme3VidTop: window.innerHeight / 8,
+        themeVidRight: window.innerWidth / 21,
         videoDimX1: 1
       });
     } else {
@@ -598,11 +607,11 @@ class Application extends React.Component {
         researchWidth: 0,
         researchBorder: 0,
         themeDescBottom: 250,
-        themeVidLeft: 0.05*window.innerWidth,
-        themeDescLeft: 0.5*window.innerWidth,
-        theme3DescTop: window.innerHeight/4,
-        theme3VidTop: window.innerHeight/4,
-        themeVidRight: 0.29*window.innerWidth
+        themeVidLeft: 0.05 * window.innerWidth,
+        themeDescLeft: 0.5 * window.innerWidth,
+        theme3DescTop: window.innerHeight / 4,
+        theme3VidTop: window.innerHeight / 4,
+        themeVidRight: 0.29 * window.innerWidth
       });
     }
   }
@@ -763,6 +772,17 @@ class Application extends React.Component {
     }));
   }
 
+  researchURL() {
+    const location = window.location;
+    const searchParams = new URLSearchParams(location.search);
+    if (searchParams.get("query") == "research") {
+      this.setState({
+        researchState: true,
+        researchWidth: window.innerWidth / 2
+      });
+    }
+  }
+
   render() {
     return (
       /*Main Div*/
@@ -838,7 +858,7 @@ class Application extends React.Component {
             position: "fixed",
             pointerEvents: "none",
             top: 0,
-            left: 0,            
+            left: 0,
             height: window.innerHeight,
             width: window.innerWidth,
             visibility: this.state.page3Vis
@@ -880,7 +900,7 @@ class Application extends React.Component {
             position: "fixed",
             pointerEvents: "none",
             top: 0,
-            left: 0,            
+            left: 0,
             height: window.innerHeight,
             width: window.innerWidth,
             visibility: this.state.page2Vis,
@@ -894,7 +914,7 @@ class Application extends React.Component {
               backgroundColor: "transparent",
               bottom: 0,
               left: -10,
-              width: 1.02*this.state.mapWidth,
+              width: 1.02 * this.state.mapWidth,
               zIndex: 1
             }}
             src={this.theme2Img}
@@ -908,7 +928,7 @@ class Application extends React.Component {
               width: "40%",
               bottom: this.state.mapHeight / 10,
               left: this.state.themeVidRight,
-              transition: "width 1s, bottom 1s, left 1s",
+              transition: "width 1s, bottom 1s, left 1s"
             }}
           >
             <text className="themeDesc">{this.theme2Desc}</text>
@@ -919,15 +939,15 @@ class Application extends React.Component {
             style={{
               bottom: this.state.mapHeight / 4,
               zIndex: this.state.videoZindex3,
-              left: this.state.themeVidRight-20,
+              left: this.state.themeVidRight - 20,
               transition: "left 1s"
             }}
             height={this.state.videoHeight}
             width={this.state.videoWidth}
             url={this.theme2Video}
             controls={true}
-            onPlay={()=>this.setState({videoZindex3: 10})}
-            onPause={()=>this.setState({videoZindex3: 0})}
+            onPlay={() => this.setState({ videoZindex3: 10 })}
+            onPause={() => this.setState({ videoZindex3: 0 })}
           />
         </div>
 
@@ -937,7 +957,7 @@ class Application extends React.Component {
             position: "fixed",
             pointerEvents: "none",
             top: 0,
-            left: 0,            
+            left: 0,
             height: window.innerHeight,
             width: window.innerWidth,
             visibility: this.state.page4Vis
@@ -950,7 +970,7 @@ class Application extends React.Component {
               position: "absolute",
               zIndex: 5,
               width: this.state.themeDescWidth,
-              top: 0.9*this.state.theme3DescTop,
+              top: 0.9 * this.state.theme3DescTop,
               left: this.state.themeDescLeft,
               transition: "width 1s, top 1s, left 1s"
             }}
@@ -991,7 +1011,7 @@ class Application extends React.Component {
             position: "fixed",
             pointerEvents: "none",
             top: 0,
-            left: 0,            
+            left: 0,
             height: window.innerHeight,
             width: window.innerWidth,
             visibility: this.state.page5Vis
@@ -1029,7 +1049,7 @@ class Application extends React.Component {
             style={{
               top: this.state.mapHeight / 2,
               zIndex: this.state.videoZindex4,
-              left: 5*this.state.themeVidLeft
+              left: 5 * this.state.themeVidLeft
             }}
             height={this.state.videoHeight}
             width={this.state.videoWidth}
@@ -1042,7 +1062,7 @@ class Application extends React.Component {
             style={{
               top: this.state.mapHeight / 5,
               zIndex: this.state.videoZindex4,
-              left: 10*this.state.themeVidLeft
+              left: 10 * this.state.themeVidLeft
             }}
             height={this.state.videoHeight}
             width={this.state.videoWidth}
@@ -1055,7 +1075,7 @@ class Application extends React.Component {
             style={{
               top: this.state.mapHeight / 2,
               zIndex: this.state.videoZindex4,
-              left: 15*this.state.themeVidLeft
+              left: 15 * this.state.themeVidLeft
             }}
             height={this.state.videoHeight}
             width={this.state.videoWidth}
