@@ -116,7 +116,6 @@ class Application extends React.Component {
     this.sliderChange = this.sliderChange.bind(this);
     this.updateDimensions = this.updateDimensions.bind(this);
     this.muteFunction = this.muteFunction.bind(this);
-    this.vidDimPlay = this.vidDimPlay.bind(this);
     /*Text Variables*/
     this.aboutText =
       "Goods, Gods and Goddesses alternates performances with moments of their making. In portraying the market, Begum Bazar, and the many goods, gods and goddesses that move this space, I am looking, seeking but also escaping what I’ve been rummaging. These are individual segments, fragments of a whole, a whole I may never conceive. Because the thing is, in the telling of the various parts that will build this whole, I’m left with impressions of acts about acts, of scripted acts and scripting acts, of directing in the Bazar and being directed by the Bazar, of watching people perform with intermittent awareness of my own performance. Here, bodies become, a bride, a mother, a devotee, a woman. Stores advertise wholesale deals, actors play multiple parts, wholesale roles. It is a patch of land, but a theatre, with rehearsals, scripts and episodic memories keeping gender desirable, as imagined by some, exacted and ordered, with its outlines defined, insides determined, and borders enforced.";
@@ -460,20 +459,7 @@ class Application extends React.Component {
     }
   }
 
-  /* update video dimensions when video plays*/
-  vidDimPlay() {
-    if (this.state.researchState == false || this.state.aboutState == false) {
-      this.setState({
-        videoDimX1: 1,
-        videoZindex1: 10
-      });
-    } else {
-      this.setState({
-        videoDimX1: 1.25,
-        videoZindex1: 10
-      });
-    }
-  }
+  
   /*Function to remove popups when clicked inside About, Research, or Legend windows*/
   handleAboutResearchClick(event) {
     if (
@@ -885,12 +871,6 @@ class Application extends React.Component {
             width={this.state.videoWidth}
             url={this.theme1Video}
             controls={true}
-            onPlay={this.vidDimPlay}
-            onPause={() =>
-              this.setState({
-                videoZindex1: 1
-              })
-            }
           />
         </div>
 
@@ -927,7 +907,8 @@ class Application extends React.Component {
               width: "40%",
               bottom: this.state.mapHeight / 10,
               left: this.state.themeVidRight,
-              transition: "width 1s, bottom 1s, left 1s"
+              transition: "width 1s, bottom 1s, left 1s",
+              zIndex: 1
             }}
           >
             <text className="themeDesc">{this.theme2Desc}</text>
@@ -999,12 +980,6 @@ class Application extends React.Component {
             width={this.state.videoWidth}
             url={this.theme3Video}
             controls={true}
-            onPlay={this.vidDimPlay}
-            onPause={() =>
-              this.setState({
-                videoZindex1: 1
-              })
-            }
           />
         </div>
 
@@ -1045,16 +1020,6 @@ class Application extends React.Component {
             width={this.state.videoWidth}
             url={this.theme4Video}
             controls={true}
-            onPlay={() =>
-              this.setState({
-                videoZindex4: 10
-              })
-            }
-            onPause={() =>
-              this.setState({
-                videoZindex4: 1
-              })
-            }
           />
           {/*Theme 4 Video 2*/}
           <ReactPlayer
@@ -1068,18 +1033,6 @@ class Application extends React.Component {
             width={this.state.videoWidth}
             url={this.theme5Video}
             controls={true}
-            onPlay={() =>
-              this.setState({
-                videoDimX4: 1.25,
-                videoZindex4: 10
-              })
-            }
-            onPause={() =>
-              this.setState({
-                videoDimX4: 1,
-                videoZindex4: 1
-              })
-            }
           />
           {/*Theme 4 Video 3*/}
           <ReactPlayer
@@ -1093,18 +1046,6 @@ class Application extends React.Component {
             width={this.state.videoWidth}
             url={this.theme6Video}
             controls={true}
-            onPlay={() =>
-              this.setState({
-                videoDimX4: 1.25,
-                videoZindex4: 10
-              })
-            }
-            onPause={() =>
-              this.setState({
-                videoDimX4: 1,
-                videoZindex4: 1
-              })
-            }
           />
           {/*Theme 4 Video 4*/}
           <ReactPlayer
@@ -1118,18 +1059,6 @@ class Application extends React.Component {
             width={this.state.videoWidth}
             url={this.theme7Video}
             controls={true}
-            onPlay={() =>
-              this.setState({
-                videoDimX4: 1.25,
-                videoZindex4: 10
-              })
-            }
-            onPause={() =>
-              this.setState({
-                videoDimX4: 1,
-                videoZindex4: 1
-              })
-            }
           />
         </div>
         {/*Title Bar*/}
