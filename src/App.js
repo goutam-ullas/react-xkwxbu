@@ -913,7 +913,7 @@ class Application extends React.Component {
               position: "fixed",
               backgroundColor: "transparent",
               bottom: 0,
-              left: 0,
+              left: -10,
               width: 1.02*this.state.mapWidth
             }}
             src={this.theme2Img}
