@@ -58,7 +58,7 @@ class Application extends React.Component {
       videoDimX8: 1,
       videoZindex1: 1,
       videoZindex2: 1,
-      videoZindex3: 1,
+      videoZindex3: 0,
       videoZindex4: 1,
       videoZindex5: 1,
       videoZindex6: 1,
@@ -894,7 +894,8 @@ class Application extends React.Component {
               backgroundColor: "transparent",
               bottom: 0,
               left: -10,
-              width: 1.02*this.state.mapWidth
+              width: 1.02*this.state.mapWidth,
+              zIndex: 1
             }}
             src={this.theme2Img}
           />
@@ -908,7 +909,6 @@ class Application extends React.Component {
               bottom: this.state.mapHeight / 10,
               left: this.state.themeVidRight,
               transition: "width 1s, bottom 1s, left 1s",
-              zIndex: 1
             }}
           >
             <text className="themeDesc">{this.theme2Desc}</text>
@@ -918,7 +918,7 @@ class Application extends React.Component {
             className="video"
             style={{
               bottom: this.state.mapHeight / 4,
-              zIndex: this.state.videoZindex2,
+              zIndex: this.state.videoZindex3,
               left: this.state.themeVidRight-20,
               transition: "left 1s"
             }}
@@ -926,6 +926,8 @@ class Application extends React.Component {
             width={this.state.videoWidth}
             url={this.theme2Video}
             controls={true}
+            onPlay={()=>this.setState({videoZindex3: 10})}
+            onPause={()=>this.setState({videoZindex3: 0})}
           />
         </div>
 
