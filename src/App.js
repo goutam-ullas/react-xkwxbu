@@ -912,10 +912,9 @@ class Application extends React.Component {
             style={{
               position: "fixed",
               backgroundColor: "transparent",
-              top: 0,
+              bottom: 0,
               left: 0,
-              width: this.state.mapWidth,
-              height: this.state.mapHeight
+              width: this.state.mapWidth
             }}
             src={this.theme2Img}
           />
