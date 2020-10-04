@@ -456,7 +456,6 @@ class Application extends React.Component {
       researchState: true,
       legendState: true
     });
-    window.location = window.location.href.split("?")[0];
     window.location.reload(true);
   }
 
