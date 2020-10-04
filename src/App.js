@@ -24,8 +24,7 @@ import {
   faArrowRight,
   faLongArrowAltRight
 } from "@fortawesome/free-solid-svg-icons";
-import { Document, Page } from "react-pdf";
-import { Document } from "react-pdf/dist/esm/entry.parcel";
+import PDFViewer from "pdf-viewer-reactjs";
 import "./style.css";
 import mapboxgl from "mapbox-gl";
 //import "mapbox-gl/dist/mapbox-gl.css";
@@ -1571,21 +1570,25 @@ class Application extends React.Component {
             }}
           >
             {/* PDF */}
-            <Document file="somefile.pdf" />
+            <PDFViewer
+              document={{
+                url: "./Assets/Hot Water May 2020.pdf"
+              }}
+            />
             {/*Research Window - Image 1*/}
-            <img
+            {/*<img
               style={{ marginLeft: 50, marginTop: window.innerHeight / 10 }}
               src="https://i.imgur.com/oEgq3R8.jpg"
               height={(4 * window.innerHeight) / 5}
               width="auto"
-            />
+            />*/}
             {/*Research Window - Image 2*/}
-            <img
+            {/*<img
               style={{ marginLeft: 50, marginTop: window.innerHeight / 10 }}
               src="https://i.imgur.com/Fn7Komh.jpg"
               height={(4 * window.innerHeight) / 5}
               width="auto"
-            />
+            />*/}
           </div>
         </div>
         {/*Map Dots PopUps*/}
