@@ -1609,5 +1609,4 @@ class Application extends React.Component {
     );
   }
 }
-
 export default Application;
