@@ -451,11 +451,13 @@ class Application extends React.Component {
 
   /*When clicked on Home Button*/
   indexFunction() {
-    this.setState({ 
+    this.setState({
       aboutState: true,
-      researchState: true, 
-      legendState: true });
-    location.reload(true);
+      researchState: true,
+      legendState: true
+    });
+    window.location = window.location.href.split("?")[0];
+    window.location.reload(true);
   }
 
   /*Function to Update dimensions*/
