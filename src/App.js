@@ -455,7 +455,7 @@ class Application extends React.Component {
       aboutState: true,
       researchState: true, 
       legendState: true });
-    window.location.reload(false);
+    window.location.reload(true);
   }
 
   /*Function to Update dimensions*/
