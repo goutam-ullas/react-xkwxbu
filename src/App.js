@@ -24,7 +24,7 @@ import {
   faArrowRight,
   faLongArrowAltRight
 } from "@fortawesome/free-solid-svg-icons";
-//import { Document, Page } from "react-pdf";
+import { Document, Page } from "react-pdf";
 import { Document } from "react-pdf/dist/esm/entry.parcel";
 import "./style.css";
 import mapboxgl from "mapbox-gl";
@@ -1570,6 +1570,8 @@ class Application extends React.Component {
               zIndex: 100
             }}
           >
+            {/* PDF */}
+            <Document file="somefile.pdf" />
             {/*Research Window - Image 1*/}
             <img
               style={{ marginLeft: 50, marginTop: window.innerHeight / 10 }}
