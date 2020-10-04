@@ -1,18 +1,10 @@
 /*imports*/
 import React, { useRef, useEffect, useState } from "react";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams
-} from "react-router-dom";
-import {
   SliderInput,
   SliderTrack,
   SliderTrackHighlight,
   SliderHandle,
-  SliderMarker
 } from "@reach/slider";
 import "@reach/slider/styles.css";
 import ReactPlayer from "react-player";
