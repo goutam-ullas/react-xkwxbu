@@ -24,7 +24,6 @@ import {
   faArrowRight,
   faLongArrowAltRight
 } from "@fortawesome/free-solid-svg-icons";
-import PDFViewer from "pdf-viewer-reactjs";
 import "./style.css";
 import mapboxgl from "mapbox-gl";
 //import "mapbox-gl/dist/mapbox-gl.css";
@@ -1570,11 +1569,6 @@ class Application extends React.Component {
             }}
           >
             {/* PDF */}
-            <PDFViewer
-              document={{
-                url: "./Assets/Hot Water May 2020.pdf"
-              }}
-            />
             {/*Research Window - Image 1*/}
             {/*<img
               style={{ marginLeft: 50, marginTop: window.innerHeight / 10 }}
