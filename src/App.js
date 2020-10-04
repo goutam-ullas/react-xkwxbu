@@ -456,7 +456,8 @@ class Application extends React.Component {
       researchState: true,
       legendState: true
     });
-    window.location.reload(true);
+    let pathWithoutTheQuery = window.location.pathname;
+    window.location.replace(pathWithoutTheQuery);
   }
 
   /*Function to Update dimensions*/
