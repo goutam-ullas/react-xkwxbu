@@ -1568,21 +1568,20 @@ class Application extends React.Component {
               zIndex: 100
             }}
           >
-            {/* PDF */}
             {/*Research Window - Image 1*/}
-            {/*<img
+            <img
               style={{ marginLeft: 50, marginTop: window.innerHeight / 10 }}
               src="https://i.imgur.com/oEgq3R8.jpg"
               height={(4 * window.innerHeight) / 5}
               width="auto"
-            />*/}
+            />
             {/*Research Window - Image 2*/}
-            {/*<img
+            <img
               style={{ marginLeft: 50, marginTop: window.innerHeight / 10 }}
               src="https://i.imgur.com/Fn7Komh.jpg"
               height={(4 * window.innerHeight) / 5}
               width="auto"
-            />*/}
+            />
           </div>
         </div>
         {/*Map Dots PopUps*/}
