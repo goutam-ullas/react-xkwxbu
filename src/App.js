@@ -44,7 +44,6 @@ class Application extends React.Component {
       lat: 17.37563,
       value: 50,
       index: true,
-      squareState: true,
       aboutState: true,
       aboutWidth: 0,
       researchState: true,
@@ -113,6 +112,7 @@ class Application extends React.Component {
     this.video6Ref = React.createRef();
     this.video7Ref = React.createRef();
     this.video8Ref = React.createRef();
+    this.indexFunction = this.indexFunction.bind(this);
     this.handleAboutResearchClick = this.handleAboutResearchClick.bind(this);
     this.circleFunction = this.circleFunction.bind(this);
     this.circleFunctionDown = this.circleFunctionDown.bind(this);
@@ -451,6 +451,10 @@ class Application extends React.Component {
 
   /*When clicked on Home Button*/
   indexFunction() {
+    this.setState({ 
+      aboutState: true,
+      researchState: true, 
+      legendState: true });
     window.location.reload(false);
   }
 
